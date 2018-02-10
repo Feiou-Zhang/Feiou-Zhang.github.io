@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="LeetCode 1-100"/>
+
+
+
+
+  <meta name="keywords" content="LeetCode, Java, Feiou Zhang" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Feiou Zhang">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/02/10/lc1-100/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> LeetCode 1-100 - Feiou Zhang </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Feiou Zhang</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Feiou Zhang</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          LeetCode 1-100
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-02-10
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/LeetCode/">LeetCode</a>
+            
+              <a href="/categories/LeetCode/Java/">Java</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#窗口类问题"><span class="toc-text">窗口类问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Longest-Substring-Without-Repeating-Characters"><span class="toc-text">3. Longest Substring Without Repeating Characters</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#209-Minimum-Size-Subarray-Sum"><span class="toc-text">209. Minimum Size Subarray Sum</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#76-Minimum-Window-Substring"><span class="toc-text">76. Minimum Window Substring</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="窗口类问题"><a href="#窗口类问题" class="headerlink" title="窗口类问题"></a>窗口类问题</h3><h4 id="3-Longest-Substring-Without-Repeating-Characters"><a href="#3-Longest-Substring-Without-Repeating-Characters" class="headerlink" title="3. Longest Substring Without Repeating Characters"></a>3. Longest Substring Without Repeating Characters</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Given a string, find the length of the longest substring without repeating characters.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> Examples:</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> Given "abcabcbb", the answer is "abc", which the length is 3.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> Given "bbbbb", the answer is "b", with the length of 1.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> Given "pwwkew", the answer is "wke", with the length of 3. Note the answer must be a substring</span></span><br><span class="line"><span class="comment"> "pwke" is a subsequence and not a substring.*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LongestSubstringWithoutRepeatingCharacters0003</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** time O(n) space O(1) 方法：双指针，窗口类</span></span><br><span class="line"><span class="comment">     * 思路：用一个map记录窗口内的字母，然后用头尾指针来确定最长无重子序列的两个边界</span></span><br><span class="line"><span class="comment">     * 用右指针遍历（探索）字符串，如果碰见不在map里面的字母，指针右移，更新 max</span></span><br><span class="line"><span class="comment">     * 当右指针找到一个map里面有的字母的时候，用左指针向左移 去找新窗口的左边界，</span></span><br><span class="line"><span class="comment">     * 左边界就是和右指针字母相同 字母的后一位</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * 具体写还是需要举例画图分析才不容易出错。容易出错的点在于找左边界，条件就是当左右指针上的字母不一样时</span></span><br><span class="line"><span class="comment">     * map里都应该删除左指针上的字母，然后左移左指针，知道一样的时候，跳出循环，这时候，需要再左移一次左指针</span></span><br><span class="line"><span class="comment">     * 原因就是这时候，这时候左右指针还指向了同一个字母，而左边界应该是和右指针字母相同 字母的后一位</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * 小优化，如果longest已经等于256了，直接返回就可以，因为不能有更长的了</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> longest = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span>[] map = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">256</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>; right &lt; s.length(); ++right) &#123;</span><br><span class="line">            <span class="keyword">if</span> (map[s.charAt(right)] == <span class="number">0</span>) &#123;</span><br><span class="line">                ++map[s.charAt(right)];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">while</span> (s.charAt(left) != s.charAt(right) &amp;&amp; map[s.charAt(right)] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    --map[s.charAt(left++)];</span><br><span class="line">                &#125;</span><br><span class="line">                ++left;</span><br><span class="line">            &#125;</span><br><span class="line">            longest = Math.max(longest, right - left + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> longest;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="209-Minimum-Size-Subarray-Sum"><a href="#209-Minimum-Size-Subarray-Sum" class="headerlink" title="209. Minimum Size Subarray Sum"></a>209. Minimum Size Subarray Sum</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Given an array of n positive integers and a positive integer s, find the minimal length of</span></span><br><span class="line"><span class="comment"> * a contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> For example, given the array [2,3,1,2,4,3] and s = 7,</span></span><br><span class="line"><span class="comment"> the subarray [4,3] has the minimal length under the problem constraint.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> click to show more practice.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> More practice:</span></span><br><span class="line"><span class="comment"> If you have figured out the O(n) solution, try coding with time complexity O(n log n).*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MinimumSizeSubarraySum0209</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** time O(n) space O(1) 方法：双指针，窗口</span></span><br><span class="line"><span class="comment">     * 思路：用左右指针来 标记 最小窗口的边界，如果当前sum小于target，sum加右指针上的数</span></span><br><span class="line"><span class="comment">     * while sum大于target的时候，左移 左指针，并用sum减去左指针上的数，直到sum小于target</span></span><br><span class="line"><span class="comment">     * 注意：1. 只有在sum 大于等于s的时候才能更新minSub，所以要放在while循环前面</span></span><br><span class="line"><span class="comment">     *      2. 最后要检查下，如果整个数组和都小于s的时候，means minSub还是null的时候，直接返回0</span></span><br><span class="line"><span class="comment">     * 优化：sum加右指针上的数可以不用检查sum是不是小于target，因为每次进入for循环，sum肯定小于s</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        Integer minSub = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>; right &lt; nums.length; ++right) &#123;</span><br><span class="line">            <span class="keyword">if</span> (sum &lt; s) &#123;</span><br><span class="line">                sum += nums[right];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (sum &gt;= s) &#123;</span><br><span class="line">                minSub = minSub == <span class="keyword">null</span> ? right - left + <span class="number">1</span> : Math.min(minSub, right - left + <span class="number">1</span>);</span><br><span class="line">                sum -= nums[left++];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> minSub == <span class="keyword">null</span> ? <span class="number">0</span> : minSub;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="76-Minimum-Window-Substring"><a href="#76-Minimum-Window-Substring" class="headerlink" title="76. Minimum Window Substring"></a>76. Minimum Window Substring</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Given a string S and a string T, find the minimum window in S</span></span><br><span class="line"><span class="comment"> * which will contain all the characters in T in complexity O(n).</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> For example,</span></span><br><span class="line"><span class="comment"> S = "ADOBECODEBANC"</span></span><br><span class="line"><span class="comment"> T = "ABC"</span></span><br><span class="line"><span class="comment"> Minimum window is "BANC".</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> Note:</span></span><br><span class="line"><span class="comment"> If there is no such window in S that covers all characters in T, return the empty string "".</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">you are guaranteed that there will always be only one unique minimum window in S.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MinimumWindowSubstring0076</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** time O() space O() 方法：双指针，窗口</span></span><br><span class="line"><span class="comment">     * 思路：用map记录字符串T的词频（字频），左右指针标记窗口的边界, count 初始为t的长度</span></span><br><span class="line"><span class="comment">     * 1. 当右指针的字母在map里的字频 - 1 之后还 大于等于0 的时候，count--；</span></span><br><span class="line"><span class="comment">     * 意思就是找到了一个qualified字母，因为如果如果之前是0 的话，说明改字母不在map里或者是重复字母</span></span><br><span class="line"><span class="comment">     * 2. 当count等于0的时候，左移左指针，当左指针的字母在map里面的字频 + 1之后大于0的时候，count++</span></span><br><span class="line"><span class="comment">     * 意思就是，如果+1 大于0，说明之前肯定至少是0，负数的话，该字母必定不在T里面，或者在T里面但目前重复</span></span><br><span class="line"><span class="comment">     * 注意： 更新minSub 必须 在count等于0 的时候，且移动左指针之前</span></span><br><span class="line"><span class="comment">     * 优化：</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">minWindow</span><span class="params">(String s, String t)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="keyword">null</span> || t == <span class="keyword">null</span> || s.length() &lt; t.length()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] map = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">256</span>];</span><br><span class="line">        Integer minSub = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">int</span> count = t.length();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : t.toCharArray()) &#123;</span><br><span class="line">            ++map[c];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> end = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> left = <span class="number">0</span>, right = <span class="number">0</span>; right &lt; s.length(); ++right) &#123;</span><br><span class="line">            <span class="keyword">if</span> (--map[s.charAt(right)] &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                --count;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (count == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (minSub == <span class="keyword">null</span> || right - left + <span class="number">1</span> &lt; minSub) &#123;</span><br><span class="line">                    minSub = right - left + <span class="number">1</span>;</span><br><span class="line">                    start = left;</span><br><span class="line">                    end = right;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (++map[s.charAt(left++)] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    ++count;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> minSub == <span class="keyword">null</span> ? <span class="string">""</span> : s.substring(start, end + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/LeetCode/">LeetCode</a>
+            
+              <a href="/tags/Java/">Java</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2018/02/10/lc100-200/">
+        <span class="next-text nav-default">LeetCode 100 - 200</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:feiou.zhang@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.linkedin.com/in/feiouzhang/" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Feiou-Zhang" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2017 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Feiou Zhang</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>
