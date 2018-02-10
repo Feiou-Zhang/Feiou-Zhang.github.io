@@ -17,8 +17,12 @@
 
 
 
+  <meta name="description" content="LeetCode 100 - 200"/>
 
 
+
+
+  <meta name="keywords" content="algorithm, Feiou Zhang" />
 
 
 
@@ -38,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/2018/02/10/100-200/"/>
+<link rel="canonical" href="http://yoursite.com/2018/02/10/lc100-200/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -77,7 +81,7 @@
 
 
 
-    <title>  - Feiou Zhang </title>
+    <title> LeetCode 100 - 200 - Feiou Zhang </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -193,7 +197,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          
+          LeetCode 100 - 200
         
       </h1>
 
@@ -218,9 +222,7 @@
 
     <div class="post-content">
       
-        <hr>
-<p>title: 100-200<br>date: 2018-02-10 04:19:13<br>tags: [algorithm]<br>categories:</p>
-<h5 id="101-Symmetric-Tree"><a href="#101-Symmetric-Tree" class="headerlink" title="101. Symmetric Tree"></a>101. Symmetric Tree</h5><p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</p>
+        <h5 id="101-Symmetric-Tree"><a href="#101-Symmetric-Tree" class="headerlink" title="101. Symmetric Tree"></a>101. Symmetric Tree</h5><p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</p>
 <p>For example, this binary tree [1,2,2,3,4,4,3] is symmetric:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> isSymmetric(root.left, root.right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode left, TreeNode right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (left == <span class="keyword">null</span> &amp;&amp; right == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (left == <span class="keyword">null</span> || right == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (left.val != right.val) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> isSymmetric(left.left, right.right) &amp;&amp; isSymmetric(left.right, right.left);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//**very important** -- iterative</span></span><br><span class="line"><span class="comment">// when the left and right both equal to null, we can not just return true like what we did for recursion.</span></span><br><span class="line"><span class="comment">//because recursion only return to the sub result, but when we do it iteratively, we can only return the final result, </span></span><br><span class="line">so, <span class="keyword">if</span> both left and right are <span class="keyword">null</span>, we still have to conitnue to check rest of the nodes.</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        queue.offer(root.left);</span><br><span class="line">        queue.offer(root.right);</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            TreeNode left  = queue.poll();</span><br><span class="line">            TreeNode right = queue.poll();</span><br><span class="line">            <span class="keyword">if</span> (left == <span class="keyword">null</span> &amp;&amp; right == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (left == <span class="keyword">null</span> || right == <span class="keyword">null</span> || left.val != right.val) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            queue.offer(left.left);</span><br><span class="line">            queue.offer(right.right);</span><br><span class="line">            queue.offer(left.right);</span><br><span class="line">            queue.offer(right.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h5 id="104-Maximum-Depth-of-Binary-Tree"><a href="#104-Maximum-Depth-of-Binary-Tree" class="headerlink" title="104. Maximum Depth of Binary Tree"></a>104. Maximum Depth of Binary Tree</h5><p>Given a binary tree, find its maximum depth.</p>
 <p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">(iterative approach)</span></span><br><span class="line"><span class="comment">level traverse, the last level has node, will be the answer</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(maxDepth(root.left), maxDepth(root.right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -681,6 +683,12 @@ AB -&gt; 28
 
     
       <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/algorithm/">algorithm</a>
+            
+          </div>
         
         
         
