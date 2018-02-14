@@ -1321,64 +1321,67 @@ article .content .caption {
   color: #383838;
 }
 .highlight {
-  color: #dccf8f;
-  background: url("./pojoaque.jpg") repeat scroll left top #181914;
+  color: #d1d9e1;
+  background: #474949;
 }
 .highlight .code .comment,
 .highlight .code .quote {
-  color: #586e75;
+  color: #969896;
   font-style: italic;
 }
 .highlight .code .keyword,
 .highlight .code .selector-tag,
 .highlight .code .literal,
+.highlight .code .type,
 .highlight .code .addition {
-  color: #b64926;
+  color: #c9c;
 }
 .highlight .code .number,
+.highlight .code .selector-attr,
+.highlight .code .selector-pseudo {
+  color: #f99157;
+}
 .highlight .code .string,
 .highlight .code .doctag,
 .highlight .code .regexp {
-  color: #468966;
+  color: #8abeb7;
 }
 .highlight .code .title,
+.highlight .code .name,
 .highlight .code .section,
-.highlight .code .built_in,
-.highlight .code .name {
-  color: #ffb03b;
+.highlight .code .built_in {
+  color: #b5bd68;
 }
 .highlight .code .variable,
 .highlight .code .template-variable,
-.highlight .code .class .title,
-.highlight .code .type,
-.highlight .code .tag {
-  color: #b58900;
+.highlight .code .selector-id,
+.highlight .code .class .title {
+  color: #fc6;
 }
-.highlight .code .attribute {
-  color: #b89859;
+.highlight .code .section,
+.highlight .code .name,
+.highlight .code .strong {
+  font-weight: bold;
 }
 .highlight .code .symbol,
 .highlight .code .bullet,
-.highlight .code .link,
 .highlight .code .subst,
-.highlight .code .meta {
-  color: #cb4b16;
+.highlight .code .meta,
+.highlight .code .link {
+  color: #f99157;
 }
 .highlight .code .deletion {
   color: #dc322f;
 }
-.highlight .code .selector-id,
-.highlight .code .selector-class {
-  color: #d3a60c;
-}
 .highlight .code .formula {
-  background: #073642;
+  background: #eee8d5;
+}
+.highlight .code .attr,
+.highlight .code .attribute {
+  color: #81a2be;
 }
 .highlight .code .emphasis {
   font-style: italic;
-}
-.highlight .code .strong {
-  font-weight: bold;
 }
 pre {
   font-family: "Menlo", "Meslo LG", monospace;
