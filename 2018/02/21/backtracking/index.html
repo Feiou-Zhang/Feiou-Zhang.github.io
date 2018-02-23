@@ -218,10 +218,17 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Permutation-系列"><span class="toc-text">Permutation 系列</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#784-Letter-Case-Permutation"><span class="toc-text">784. Letter Case Permutation</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        
+        <h3 id="Permutation-系列"><a href="#Permutation-系列" class="headerlink" title="Permutation 系列"></a>Permutation 系列</h3><h4 id="784-Letter-Case-Permutation"><a href="#784-Letter-Case-Permutation" class="headerlink" title="784. Letter Case Permutation"></a>784. Letter Case Permutation</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 题意：给一个字符串，内含字母和数字，求字母大小写不同的所有permutation</span></span><br><span class="line"><span class="comment"> * 例如：Input: S = "a1b2"</span></span><br><span class="line"><span class="comment"> Output: ["a1b2", "a1B2", "A1b2", "A1B2"]</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LetterCasePermutation0784</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** time O(n!) space O(n) 时间复杂度是 n*T(n-1),所以每次n的规模减一，所以是n的阶乘</span></span><br><span class="line"><span class="comment">     * 方法：回溯</span></span><br><span class="line"><span class="comment">     * 思路：递归函数里先循环skipindex为数字的字符。然后，dfs加回溯，造一个新的字符串</span></span><br><span class="line"><span class="comment">     * 当新的字符串长度等于原来字符串长度的时候，加到list。并返回</span></span><br><span class="line"><span class="comment">     * 优化：</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">letterCasePermutation</span><span class="params">(String S)</span> </span>&#123;</span><br><span class="line">        List&lt;String&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (S == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        lcpHelper(res, S, <span class="keyword">new</span> StringBuilder(), <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">lcpHelper</span><span class="params">(List&lt;String&gt; res, String S, StringBuilder curr, <span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (index &lt; S.length() &amp;&amp; Character.isDigit(S.charAt(index))) &#123;</span><br><span class="line">            curr.append(S.charAt(index++));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (curr.length() == S.length()) &#123;</span><br><span class="line">            res.add(curr.toString());</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> size = curr.length();</span><br><span class="line">        lcpHelper(res, S, curr.append(Character.toLowerCase(S.charAt(index))), index + <span class="number">1</span>);</span><br><span class="line">        curr.setLength(size);</span><br><span class="line">        lcpHelper(res, S, curr.append(Character.toUpperCase(S.charAt(index))), index + <span class="number">1</span>);</span><br><span class="line">        curr.setLength(size);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -247,6 +254,12 @@
         
         
   <nav class="post-nav">
+    
+      <a class="prev" href="/2018/02/22/others/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">杂题</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
     
     
       <a class="next" href="/2018/02/16/decode/">
