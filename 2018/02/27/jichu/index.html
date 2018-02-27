@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="一些基础"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Feiou Zhang">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/02/27/jichu/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> 一些基础 - Feiou Zhang </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Feiou Zhang</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Feiou Zhang</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          一些基础
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-02-27
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/Java基础/">Java基础</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Map"><span class="toc-text">Map</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HashMap-collisions-resolution"><span class="toc-text">HashMap collisions resolution</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#open-addressing"><span class="toc-text">open addressing</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#advantage"><span class="toc-text">advantage</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#disadvantage"><span class="toc-text">disadvantage</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Separate-Chaining"><span class="toc-text">Separate Chaining</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#advantage-1"><span class="toc-text">advantage</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#disadvantage-1"><span class="toc-text">disadvantage</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ways-to-traversal-a-map"><span class="toc-text">ways to traversal a map</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#iterator-when-need-to-remove-entry-during-traversal"><span class="toc-text">iterator (when need to remove entry during traversal)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bad-way-to-traversal-a-map"><span class="toc-text">bad way to traversal a map</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><h4 id="HashMap-collisions-resolution"><a href="#HashMap-collisions-resolution" class="headerlink" title="HashMap collisions resolution"></a>HashMap collisions resolution</h4><h5 id="open-addressing"><a href="#open-addressing" class="headerlink" title="open addressing"></a>open addressing</h5><p>it means if the collision happened, find another open slot by using</p>
+<ol>
+<li>liner probing</li>
+<li>quadratic probing</li>
+<li>double hashing</li>
+</ol>
+<h6 id="advantage"><a href="#advantage" class="headerlink" title="advantage"></a>advantage</h6><ol>
+<li>better cache perpormace as everything is stored in the same table</li>
+<li>no waste on space</li>
+</ol>
+<h6 id="disadvantage"><a href="#disadvantage" class="headerlink" title="disadvantage"></a>disadvantage</h6><ol>
+<li>need more time to finding the next open slot</li>
+<li>more operating when deleting elements</li>
+<li>clustering</li>
+</ol>
+<h5 id="Separate-Chaining"><a href="#Separate-Chaining" class="headerlink" title="Separate Chaining"></a>Separate Chaining</h5><p>This is the way using by Java.</p>
+<p>In java, a HashMap is actually using array and each cell of the array point to a single linked list, whenever there is a collision, the element will add the tail of the linkedList, the default initial size is <code>16</code>, the default load factor is <code>0.75</code>, this means, when the numbers of elements stored in the hashmap hit the size times load factor(16 * 0.75), java will double the size. </p>
+<p><code>Since Java 8, if the elements stored in the linked reached 8, java will switch the linked list to red-black Binary Search Tree.</code></p>
+<h6 id="advantage-1"><a href="#advantage-1" class="headerlink" title="advantage"></a>advantage</h6><ol>
+<li>easy to implement</li>
+<li>easy to delete element compare to open addressing</li>
+<li>never fill up</li>
+</ol>
+<h6 id="disadvantage-1"><a href="#disadvantage-1" class="headerlink" title="disadvantage"></a>disadvantage</h6><ol>
+<li>used addtional data structure made its cache performance not as good as using open addressing</li>
+<li>there are always many spaces are never used because of the load factor</li>
+<li>and need extra space for the pointers(links)</li>
+</ol>
+<h4 id="ways-to-traversal-a-map"><a href="#ways-to-traversal-a-map" class="headerlink" title="ways to traversal a map"></a>ways to traversal a map</h4><p>1 traversal both key and value</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (Map.Entry&lt;String, Integer&gt; item: items.entrySet()) &#123;</span><br><span class="line">   System.out.println(<span class="string">"k: "</span> + item.getKey() + <span class="string">" V: "</span> + item.getValue());</span><br><span class="line">&#125;</span><br><span class="line">        </span><br><span class="line"><span class="comment">//java 8</span></span><br><span class="line">items.forEach((k, v) -&gt; System.out.println(<span class="string">"k: "</span> + k + <span class="string">" V: "</span> + v));</span><br><span class="line">items.forEach((k, v) -&gt; &#123;<span class="keyword">if</span> (k.equals(<span class="string">"C"</span>)) System.out.print(v);&#125;);</span><br></pre></td></tr></table></figure>
+<p>2 traversal only keys or values</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (String key: items.keySet()) &#123;</span><br><span class="line">    System.out.println(<span class="string">"Key = "</span> + key);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> value: items.values()) &#123;</span><br><span class="line">    System.out.println(<span class="string">"Value = "</span> + value); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="iterator-when-need-to-remove-entry-during-traversal"><a href="#iterator-when-need-to-remove-entry-during-traversal" class="headerlink" title="iterator (when need to remove entry during traversal)"></a>iterator (when need to remove entry during traversal)</h4><p>for the remove() function, can be only used after calling the next() function,<br>and each next() good for one remove()</p>
+<ol>
+<li><p>both key and value</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;Map.Entry&lt;String, Integer&gt;&gt; item = items.entrySet().iterator();</span><br><span class="line"><span class="keyword">while</span> (item.hasNext()) &#123;</span><br><span class="line">    Map.Entry&lt;String, Integer&gt; curr = item.next();</span><br><span class="line">    System.out.println(<span class="string">"k: "</span> + curr.getKey() + </span><br><span class="line">                      <span class="string">" V: "</span> + curr.getValue());</span><br><span class="line">    <span class="keyword">if</span> (curr.getKey().equals(<span class="string">"A"</span>)) &#123;</span><br><span class="line">        item.remove();</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>for only key or value</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;String&gt; keys = items.keySet().iterator();</span><br><span class="line"><span class="keyword">while</span> (keys.hasNext()) &#123;</span><br><span class="line">    String currKey = keys.next();</span><br><span class="line">    System.out.println(<span class="string">"k: "</span> + currKey);</span><br><span class="line">    <span class="keyword">if</span> (currKey.equals(<span class="string">"A"</span>)) &#123;</span><br><span class="line">        keys.remove();</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="bad-way-to-traversal-a-map"><a href="#bad-way-to-traversal-a-map" class="headerlink" title="bad way to traversal a map"></a>bad way to traversal a map</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">for</span> (Integer key : map.keySet()) &#123;  </span><br><span class="line">  </span><br><span class="line">    Integer value = map.get(key);  </span><br><span class="line">  </span><br><span class="line">    System.out.println(<span class="string">"Key = "</span> + key + <span class="string">", Value = "</span> + value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2018/02/26/random/">
+        <span class="next-text nav-default">随机</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:feiou.zhang@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.linkedin.com/in/feiouzhang/" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Feiou-Zhang" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2017 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Feiou Zhang</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>
