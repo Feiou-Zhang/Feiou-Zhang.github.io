@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="字典树"/>
+
+
+
+
+  <meta name="keywords" content="Trie, Feiou Zhang" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Feiou Zhang">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/03/02/trie/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> 字典树 - Feiou Zhang </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Feiou Zhang</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Feiou Zhang</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          字典树
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-03-02
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/Algorithm/">Algorithm</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Template"><span class="toc-text">Template</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#208-Implement-Trie-Prefix-Tree"><span class="toc-text">208. Implement Trie (Prefix Tree)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#212-Word-Search-II"><span class="toc-text">212. Word Search II</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#211-Add-and-Search-Word-Data-structure-design"><span class="toc-text">211. Add and Search Word - Data structure design</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="Template"><a href="#Template" class="headerlink" title="Template"></a>Template</h3><p>HashMap trie:</p>
+<ul>
+<li><p>优点</p>
+<ul>
+<li>支持所有 Character</li>
+<li>相对更省空间</li>
+</ul>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>查询时间相对长</li>
+<li>尤其是有 wildcard 做 DFS 时</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>Array trie:</p>
+<ul>
+<li>优点<ul>
+<li>查询速度快，尤其是有 wildcard 做 DFS 时</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>每个 node 空间占用大</li>
+<li>比较依赖指定字符集，比如 ‘a-z’ 这种</li>
+</ul>
+</li>
+</ul>
+<h4 id="208-Implement-Trie-Prefix-Tree"><a href="#208-Implement-Trie-Prefix-Tree" class="headerlink" title="208. Implement Trie (Prefix Tree)"></a>208. Implement Trie (Prefix Tree)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImplementTrie0208</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** time O(n) space O(26^n)  n是word的长度 方法：重点就是画个图</span></span><br><span class="line"><span class="comment">     * 思路：新建一个 trieNode类，然后类里放一个label，一个map，一个布尔表示endOfWord</span></span><br><span class="line"><span class="comment">     * 全局root本身不存字母，只存一个map，然后之后的每层存一个字母，和是否是单词末尾</span></span><br><span class="line"><span class="comment">     * 优化：可以合并search 和 prifix 2个方法，代码复用</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    TrieNode root;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ImplementTrie0208</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        root = <span class="keyword">new</span> TrieNode();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(String word)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (word == <span class="keyword">null</span> || word.length() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TrieNode head = root;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.length(); ++i) &#123;</span><br><span class="line">            <span class="keyword">char</span> c = word.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (!head.map.containsKey(c)) &#123;</span><br><span class="line">                head.map.put(c, <span class="keyword">new</span> TrieNode(c));</span><br><span class="line">            &#125;</span><br><span class="line">            head = head.map.get(c);</span><br><span class="line">            <span class="keyword">if</span> (i == word.length() - <span class="number">1</span>) &#123;</span><br><span class="line">                head.endOfWord = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">search</span><span class="params">(String word)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> check(word, <span class="keyword">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">startsWith</span><span class="params">(String prefix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> check(prefix, <span class="keyword">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">check</span><span class="params">(String word, <span class="keyword">boolean</span> prefix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (word == <span class="keyword">null</span> || word.length() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TrieNode head = root;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.length(); ++i) &#123;</span><br><span class="line">            <span class="keyword">char</span> c = word.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (!head.map.containsKey(c)) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            head = head.map.get(c);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> prefix || head.endOfWord;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TrieNode</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> c;</span><br><span class="line">        Map&lt;Character, TrieNode&gt; map;</span><br><span class="line">        <span class="keyword">boolean</span> endOfWord;</span><br><span class="line">        TrieNode() &#123;</span><br><span class="line">            map = <span class="keyword">new</span> HashMap&lt;&gt;(<span class="number">26</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        TrieNode(<span class="keyword">char</span> c) &#123;</span><br><span class="line">            <span class="keyword">this</span>.c = c;</span><br><span class="line">            map = <span class="keyword">new</span> HashMap&lt;&gt;(<span class="number">26</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="212-Word-Search-II"><a href="#212-Word-Search-II" class="headerlink" title="212. Word Search II"></a>212. Word Search II</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 题意：找出list里面所有可以在board里面找到的单词</span></span><br><span class="line"><span class="comment"> * Given words = ["oath","pea","eat","rain"] and board =</span></span><br><span class="line"><span class="comment"> ['o','a','a','n'],</span></span><br><span class="line"><span class="comment"> ['e','t','a','e'],</span></span><br><span class="line"><span class="comment"> ['i','h','k','r'],</span></span><br><span class="line"><span class="comment"> ['i','f','l','v']</span></span><br><span class="line"><span class="comment"> ]</span></span><br><span class="line"><span class="comment"> Return ["eat","oath"].</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WordSearchII0212</span> </span>&#123;</span><br><span class="line">    <span class="comment">/** time O(mn *4^k) space O(4^k) mn 是board的大小, k是单词长度</span></span><br><span class="line"><span class="comment">     思路就是如果word list里面word很多的话，每次调用4放方向的dfs查询，肯定不效率</span></span><br><span class="line"><span class="comment">     1. 一个TrieNode 类，2种构造函数，4个变量，map， character， endofWord</span></span><br><span class="line"><span class="comment">     这里多加一个word，在leaf节点里。方便加入最后结果</span></span><br><span class="line"><span class="comment">     2. insert函数，把单个单词加到trie</span></span><br><span class="line"><span class="comment">     3. buildtrie函数，把整个list的每个单词加到trie,(小优化：如果单词长度大于max则不加)</span></span><br><span class="line"><span class="comment">     4. explore函数，4个方向 探索board，</span></span><br><span class="line"><span class="comment">     **先查看当前节点是否是leaf，如果是，结果中加入word，并把endOfword标记成false</span></span><br><span class="line"><span class="comment">     因为如果不标记成false，之后从第二，第三个字母bfs的时候，会重复加入该单词</span></span><br><span class="line"><span class="comment">     a, 检查越界，visited，当前字母在trie的map里面是否为空</span></span><br><span class="line"><span class="comment">     b. 标记visited，4方向dfs，trie 传入下一层 节点</span></span><br><span class="line"><span class="comment">     c. 回溯visited</span></span><br><span class="line"><span class="comment">     5，findwords主函数，遍历整个board</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">findWords</span><span class="params">(<span class="keyword">char</span>[][] board, String[] words)</span> </span>&#123;</span><br><span class="line">        List&lt;String&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (board == <span class="keyword">null</span> || board.length == <span class="number">0</span> || board[<span class="number">0</span>] == <span class="keyword">null</span> || board[<span class="number">0</span>].length == <span class="number">0</span> ||</span><br><span class="line">                words == <span class="keyword">null</span> || words.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line">        TrieNode root = buildTrie(board.length * board[<span class="number">0</span>].length, words);</span><br><span class="line">        <span class="keyword">boolean</span>[][] visited = <span class="keyword">new</span> <span class="keyword">boolean</span>[board.length][board[<span class="number">0</span>].length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; board.length; ++i) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; board[<span class="number">0</span>].length; ++j) &#123;</span><br><span class="line">                explore(board, visited, res, root, i, j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">explore</span><span class="params">(<span class="keyword">char</span>[][] board, <span class="keyword">boolean</span>[][] visited, List&lt;String&gt; res,</span></span></span><br><span class="line"><span class="function"><span class="params">                         TrieNode root, <span class="keyword">int</span> row, <span class="keyword">int</span> col)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root.endOfWord) &#123;</span><br><span class="line">            res.add(root.word);</span><br><span class="line">            root.endOfWord = <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (row &lt; <span class="number">0</span> || row == board.length || col &lt; <span class="number">0</span> || col == board[<span class="number">0</span>].length ||</span><br><span class="line">               visited[row][col] || !root.map.containsKey(board[row][col])) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        visited[row][col] = <span class="keyword">true</span>;</span><br><span class="line">        root = root.map.get(board[row][col]);</span><br><span class="line">        explore(board, visited, res, root, row + <span class="number">1</span>, col);</span><br><span class="line">        explore(board, visited, res, root, row - <span class="number">1</span>, col);</span><br><span class="line">        explore(board, visited, res, root, row, col + <span class="number">1</span>);</span><br><span class="line">        explore(board, visited, res, root, row, col - <span class="number">1</span>);</span><br><span class="line">        visited[row][col] = <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> TrieNode <span class="title">buildTrie</span><span class="params">(<span class="keyword">int</span> max, String[] words)</span> </span>&#123;</span><br><span class="line">        TrieNode root = <span class="keyword">new</span> TrieNode();</span><br><span class="line">        <span class="keyword">for</span> (String word : words) &#123;</span><br><span class="line">            <span class="keyword">if</span> (word == <span class="keyword">null</span> || word.length() == <span class="number">0</span> || word.length() &gt; max) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            insert(word, root);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(String word, TrieNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.length(); ++i) &#123;</span><br><span class="line">            <span class="keyword">char</span> c = word.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (!root.map.containsKey(c)) &#123;</span><br><span class="line">                root.map.put(c, <span class="keyword">new</span> TrieNode(c));</span><br><span class="line">            &#125;</span><br><span class="line">            root = root.map.get(c);</span><br><span class="line">            <span class="keyword">if</span> (i == word.length() - <span class="number">1</span>) &#123;</span><br><span class="line">                root.endOfWord = <span class="keyword">true</span>;</span><br><span class="line">                root.word = word;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TrieNode</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> c;</span><br><span class="line">        Map&lt;Character, TrieNode&gt; map;</span><br><span class="line">        <span class="keyword">boolean</span> endOfWord;</span><br><span class="line">        String word;</span><br><span class="line">        TrieNode() &#123;</span><br><span class="line">            map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        TrieNode(<span class="keyword">char</span> c) &#123;</span><br><span class="line">            <span class="keyword">this</span>.c = c;</span><br><span class="line">            map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="211-Add-and-Search-Word-Data-structure-design"><a href="#211-Add-and-Search-Word-Data-structure-design" class="headerlink" title="211. Add and Search Word - Data structure design"></a>211. Add and Search Word - Data structure design</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 题意：设计add，和search 2个函数，search的时候，可以用。来代表任何字母</span></span><br><span class="line"><span class="comment"> * addWord("bad")</span></span><br><span class="line"><span class="comment"> addWord("dad")</span></span><br><span class="line"><span class="comment"> addWord("mad")</span></span><br><span class="line"><span class="comment"> search("pad") -&gt; false</span></span><br><span class="line"><span class="comment"> search("bad") -&gt; true</span></span><br><span class="line"><span class="comment"> search(".ad") -&gt; true</span></span><br><span class="line"><span class="comment"> search("b..") -&gt; true*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AddandSearchWord0211</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**  time worst case O(26^n) space O(26^n)</span></span><br><span class="line"><span class="comment">     * 如果是“...z”这种情况，且字典树比较满的时候，就会是26^n run time</span></span><br><span class="line"><span class="comment">     * 思路就是如果遇到“。”那么就把该层map里面所有非null的节点都向下dfs一次</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    TrieNode root;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AddandSearchWord0211</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        root = <span class="keyword">new</span> TrieNode();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Adds a word into the data structure. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addWord</span><span class="params">(String word)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (word == <span class="keyword">null</span> || word.length() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        TrieNode head = root;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.length(); ++i) &#123;</span><br><span class="line">            <span class="keyword">char</span> c = word.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (!head.map.containsKey(c)) &#123;</span><br><span class="line">                head.map.put(c, <span class="keyword">new</span> TrieNode(c));</span><br><span class="line">            &#125;</span><br><span class="line">            head = head.map.get(c);</span><br><span class="line">        &#125;</span><br><span class="line">        head.endOfWord = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**  A word could contain the dot character '.' to represent any one letter. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">search</span><span class="params">(String word)</span> </span>&#123;</span><br><span class="line">        TrieNode head = root;</span><br><span class="line">        <span class="keyword">return</span> searchHelper(word, <span class="number">0</span>, head);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">searchHelper</span><span class="params">(String word, <span class="keyword">int</span> index, TrieNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (word == <span class="keyword">null</span> || word.length() == <span class="number">0</span> || index == word.length()) &#123;</span><br><span class="line">            <span class="keyword">return</span> head.endOfWord;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">char</span> c = word.charAt(index);</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">'.'</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (TrieNode trieNode : head.map.values()) &#123;</span><br><span class="line">                <span class="keyword">if</span> (searchHelper(word, index + <span class="number">1</span>, trieNode)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head.map.containsKey(c) &amp;&amp; searchHelper(word, index + <span class="number">1</span>, head.map.get(c));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TrieNode</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> c;</span><br><span class="line">        Map&lt;Character, TrieNode&gt; map;</span><br><span class="line">        <span class="keyword">boolean</span> endOfWord;</span><br><span class="line">        TrieNode() &#123;</span><br><span class="line">            map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        TrieNode(<span class="keyword">char</span> c) &#123;</span><br><span class="line">            <span class="keyword">this</span>.c = c;</span><br><span class="line">            map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Trie/">Trie</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2018/02/27/jichu/">
+        <span class="next-text nav-default">一些基础</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:feiou.zhang@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.linkedin.com/in/feiouzhang/" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Feiou-Zhang" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2017 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Feiou Zhang</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>
