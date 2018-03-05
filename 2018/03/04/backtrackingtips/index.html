@@ -17,8 +17,12 @@
 
 
 
+  <meta name="description" content="回溯解题小技巧"/>
 
 
+
+
+  <meta name="keywords" content="回溯, Feiou Zhang" />
 
 
 
@@ -38,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/archives/2018/03/"/>
+<link rel="canonical" href="http://yoursite.com/2018/03/04/backtrackingtips/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -77,11 +81,7 @@
 
 
 
-    <title>
-  
-    Archives - Feiou Zhang
-  
-</title>
+    <title> 回溯解题小技巧 - Feiou Zhang </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -193,95 +193,134 @@
           <div id="content" class="content">
             
   
-  <section id="archive" class="archive">
-    
-      
-        <div class="archive-title">
-          <span class="archive-post-counter">
-            19 Posts In Total
-          </span>
-        </div>
-      
-    
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          回溯解题小技巧
+        
+      </h1>
 
-    
-      
+      <div class="post-meta">
+        <span class="post-time">
+          2018-03-04
+        </span>
         
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year">2018</h2>
+          <div class="post-category">
+            
+              <a href="/categories/解题总结/">解题总结</a>
+            
           </div>
         
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            03-04
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/03/04/backtrackingtips/" class="archive-post-link">
-            回溯解题小技巧
-          </a>
-        </span>
+        
       </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        <p>传index</p>
+<ol>
+<li><p>Letter Combinations of a Phone Number<br>递归下层用index+1，表示下一个数字，因为，最终的答案只能从第一个数字开始的，所以不用使用for循环<br>但对于每一个数字，还是需要循环来替换这个数字代表的所有字母</p>
+</li>
+<li><p>Combination Sum<br>当前元素可以重复使用，但不能回头用之前的元素，所以，虽然传入index，但递归的时候，不用+1<br>而且，组合中，其实可以 以任何元素开始，所以要用for循环</p>
+</li>
+<li><p>Combination Sum II, 216. Combination Sum III<br>当前元素不能重复使用，所以需要传入index，递归的时候，index + 1<br>而且，组合中，其实可以 以任何元素开始，所以要用for循环</p>
+</li>
+<li><p>Combinations, 78. Subsets, 90. Subsets II<br>因为不能选回头的元素，所以需要传入index来记录现在用到哪个元素了，而且，第一个元素可以是任何元素<br>所以要用for循环</p>
+</li>
+<li><p>Subsets, 90. Subsets II<br>subset的话，并不需要一个明确的退出条件，所以，在进入递归函数的时候，就可以先把当前结果加入到res</p>
+</li>
+<li><p>Restore IP Addresses<br>传index很好理解，因为下一层要从上一次断开的地方开始，而且，这个ip是必须要100%出自input字符串的<br>意思就是，必须从字符串的开头作为第一个segment，所以不需要用for循环，每次做1，2，3位数的判断既可</p>
+</li>
+<li><p>Palindrome Partitioning<br>需要传入一个左边界的index，然后for循环，找回文的右边界，然后下层递归的左边界就是上次的右边界<br>这题和Letter Combinations of a Phone Number有点像的地方就是，其实本来并不需要for循环<br>以为一定是要以input字符串的开始 为开始的，但由于右边界的范围无法确定，只能用for循环来确定边界</p>
+</li>
+<li><p>Factor Combinations<br>这个因子的选取因为也是不回头的规则，需要还是需要传入index，来标记当前用到哪个因子了<br>而且，要用for循环来不断加入当前因子，所以，递归的时候，并不需要 +1<br>这题，去重是最重要的部分。详细还是复习代码吧</p>
+</li>
+<li><p>Generalized Abbreviation<br>首先缩写肯定是要从第一位开始的，如果从后面开始，就miss了一些字符，肯定就错了，所以不用for循环<br>其次，也肯定是要做的当前走到哪个index了，所以，递归也传入index，并且index要加一<br>这题的重点是，abbreviate的时候如何回溯，因为毕竟当时没有加入任何东西到stringbuilder里面<br>所以，这个题要在加入结果后，也回溯，这样就可以把最后没走到情况二的分支也回溯</p>
+</li>
+</ol>
+<p>不传index</p>
+<ol>
+<li><p>Permutations</p>
+<p>Permutations 不用传index，因为上一层可以选任何数字，但后面无法用index来判断上一层用了什么<br>所以，要用一个boolean 数组来标记哪个元素之前用过了</p>
+</li>
+<li><p>Permutations II</p>
+<p>这个题需要注意的一点就是去重的时候，由于并没有传入index，当nums[i] == nums[i - 1]的时候，<br>i 和 i-1 是一样的，没有什么可以区分，这段代码会直接跳过，所以，curr的size永远满足不了<br>所以，需要多加一个条件，当上一个重复的元素used或者没used得时候，再skip<br>if (used[i] || i &gt; 0 &amp;&amp; nums[i] == nums[i - 1] &amp;&amp; !used[i - 1]) { continue; }</p>
+</li>
+</ol>
+<p>退出时扔需要回溯</p>
+<ol>
+<li>Generalized Abbreviation</li>
+</ol>
+<p>无退出条件</p>
+<ol>
+<li>Subsets, 90. Subsets II</li>
+</ol>
+<p>用for loop</p>
+<ol>
+<li>39Combination Sum</li>
+<li>Combination Sum II</li>
+<li>Permutations</li>
+<li>Combinations</li>
+<li>Palindrome Partitioning</li>
+</ol>
+<p>不用for loop</p>
+<ol>
+<li>Letter Combinations of a Phone Number</li>
+<li>Restore IP Addresses</li>
+<li>Generalized Abbreviation</li>
+</ol>
+
+      
+    </div>
+
     
       
-        
-        
-
-        
       
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            03-04
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/03/04/js/" class="archive-post-link">
-            JavaScript
-          </a>
-        </span>
-      </div>
-    
+
+
       
-        
-        
-
-        
       
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            03-02
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/03/02/trie/" class="archive-post-link">
-            字典树
-          </a>
-        </span>
-      </div>
     
-  </section>
 
-  
-  <nav class="pagination">
     
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/回溯/">回溯</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2018/03/04/js/">
+        <span class="next-text nav-default">JavaScript</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -366,6 +405,11 @@
     </div>
 
     
+  
+  
+
+  
+
 
 
     
