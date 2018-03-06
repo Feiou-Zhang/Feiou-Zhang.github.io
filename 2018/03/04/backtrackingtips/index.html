@@ -221,7 +221,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#递归需要传index"><span class="toc-text">递归需要传index</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#递归不需要传index"><span class="toc-text">递归不需要传index</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#退出时扔需要回溯"><span class="toc-text">退出时扔需要回溯</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#无退出条件"><span class="toc-text">无退出条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#用for-loop"><span class="toc-text">用for loop</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#不用for-loop"><span class="toc-text">不用for loop</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#递归需要传index"><span class="toc-text">递归需要传index</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#递归不需要传index"><span class="toc-text">递归不需要传index</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#退出时扔需要回溯"><span class="toc-text">退出时扔需要回溯</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#无退出条件"><span class="toc-text">无退出条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#不用for-loop"><span class="toc-text">不用for loop</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
     </div>
   </div>
 
@@ -231,7 +231,7 @@
         <blockquote>
 <p>回溯问题种类很多，有多题都很类似，如果没有很理解题意，容易出些小差错，比如一个 combination sum，<br>解中，可以 或不可以 重复用元素，可以 或不可以 回头用之前的元素，之类的，题目稍微变一点，就可能变成另外一题<br>所以，这种题，读题必须读透。还有就是递归函数中，需不需要 用for 循环， 参数中需不需要传index，有时候也容易搞混</p>
 </blockquote>
-<h5 id="递归需要传index"><a href="#递归需要传index" class="headerlink" title="递归需要传index"></a>递归需要传index</h5><ol>
+<h4 id="递归需要传index"><a href="#递归需要传index" class="headerlink" title="递归需要传index"></a>递归需要传index</h4><ol>
 <li><p>Letter Combinations of a Phone Number<br>递归下层用index+1，表示下一个数字，因为，最终的答案只能从第一个数字开始的，所以不用使用for循环<br>但对于每一个数字，还是需要循环来替换这个数字代表的所有字母</p>
 </li>
 <li><p>Combination Sum<br>当前元素可以重复使用，但不能回头用之前的元素，所以，虽然传入index，但递归的时候，不用+1<br>而且，组合中，其实可以 以任何元素开始，所以要用for循环</p>
@@ -251,28 +251,22 @@
 <li><p>Generalized Abbreviation<br>首先缩写肯定是要从第一位开始的，如果从后面开始，就miss了一些字符，肯定就错了，所以不用for循环<br>其次，也肯定是要做的当前走到哪个index了，所以，递归也传入index，并且index要加一<br>这题的重点是，abbreviate的时候如何回溯，因为毕竟当时没有加入任何东西到stringbuilder里面<br>所以，这个题要在加入结果后，也回溯，这样就可以把最后没走到情况二的分支也回溯</p>
 </li>
 </ol>
-<h5 id="递归不需要传index"><a href="#递归不需要传index" class="headerlink" title="递归不需要传index"></a>递归不需要传index</h5><ol>
+<h4 id="递归不需要传index"><a href="#递归不需要传index" class="headerlink" title="递归不需要传index"></a>递归不需要传index</h4><ol>
 <li><p>Permutations</p>
 <p>Permutations 不用传index，因为上一层可以选任何数字，但后面无法用index来判断上一层用了什么<br>所以，要用一个boolean 数组来标记哪个元素之前用过了</p>
 </li>
 <li><p>Permutations II</p>
 <p>这个题需要注意的一点就是去重的时候，由于并没有传入index，当nums[i] == nums[i - 1]的时候，<br>i 和 i-1 是一样的，没有什么可以区分，这段代码会直接跳过，所以，curr的size永远满足不了<br>所以，需要多加一个条件，当上一个重复的元素used或者没used得时候，再skip<br>if (used[i] || i &gt; 0 &amp;&amp; nums[i] == nums[i - 1] &amp;&amp; !used[i - 1]) { continue; }</p>
 </li>
-</ol>
-<h5 id="退出时扔需要回溯"><a href="#退出时扔需要回溯" class="headerlink" title="退出时扔需要回溯"></a>退出时扔需要回溯</h5><ol>
+<li><p>Palindrome Permutation II</p>
+<p>这个题，其实有点特殊，因为index有很多，for循环是循环遍历map里面符合条件的字符，这个不用传index，<br>因为map回溯之后，是可以回头选择之前的字符的，而且，当前字符也可能有多个，需要重复选择<br>但对于解，是有left 和 right 2个 <code>index</code>的，每层只把字符添加到当前的left 和 right index上。<br>而下层就要从left-1 和right+1 开始继续。直到left或right 出界为止    </p>
+<h4 id="退出时扔需要回溯"><a href="#退出时扔需要回溯" class="headerlink" title="退出时扔需要回溯"></a>退出时扔需要回溯</h4></li>
 <li>Generalized Abbreviation</li>
 </ol>
-<h5 id="无退出条件"><a href="#无退出条件" class="headerlink" title="无退出条件"></a>无退出条件</h5><ol>
+<h4 id="无退出条件"><a href="#无退出条件" class="headerlink" title="无退出条件"></a>无退出条件</h4><ol>
 <li>Subsets, 90. Subsets II</li>
 </ol>
-<h5 id="用for-loop"><a href="#用for-loop" class="headerlink" title="用for loop"></a>用for loop</h5><ol>
-<li>39Combination Sum</li>
-<li>Combination Sum II</li>
-<li>Permutations</li>
-<li>Combinations</li>
-<li>Palindrome Partitioning</li>
-</ol>
-<h5 id="不用for-loop"><a href="#不用for-loop" class="headerlink" title="不用for loop"></a>不用for loop</h5><ol>
+<h4 id="不用for-loop"><a href="#不用for-loop" class="headerlink" title="不用for loop"></a>不用for loop</h4><ol>
 <li>Letter Combinations of a Phone Number</li>
 <li>Restore IP Addresses</li>
 <li>Generalized Abbreviation</li>
@@ -283,6 +277,7 @@
 <li>是否可以重复使用当前元素，是否可以回头使用之前的元素</li>
 <li>所有的解是否必须以input的开头作为开头。（yes: 不用for循环； no： 用fro循环）</li>
 </ol>
+<p>另外，这种题的复杂度一般都真的很复杂，比较不容易分析<br>但其实可以用一个简单的公式来确定 ： O(答案总数 * 构造每个答案的时间)<br>比如，subset 和 combination，就有2^n个解，permutation，有n!个解</p>
 
       
     </div>
