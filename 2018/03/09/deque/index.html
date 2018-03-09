@@ -17,10 +17,12 @@
 
 
 
-  <meta name="description" content="tags"/>
+  <meta name="description" content="栈和队列"/>
 
 
 
+
+  <meta name="keywords" content="Deque, Feiou Zhang" />
 
 
 
@@ -40,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/tags/"/>
+<link rel="canonical" href="http://yoursite.com/2018/03/09/deque/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -79,7 +81,7 @@
 
 
 
-    <title> Tags - Feiou Zhang </title>
+    <title> 栈和队列 - Feiou Zhang </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -190,14 +192,97 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <div class="tag-cloud">
-    <div class="tag-cloud-title">
-      22 Tags In Total
-    </div>
-    <div class="tag-cloud-tags">
-      <a href="/tags/Kth/" style="font-size: 16px;">Kth</a> <a href="/tags/Sort/" style="font-size: 16px;">Sort</a> <a href="/tags/Backtracking/" style="font-size: 16px;">Backtracking</a> <a href="/tags/Decode/" style="font-size: 16px;">Decode</a> <a href="/tags/Deque/" style="font-size: 16px;">Deque</a> <a href="/tags/Tips/" style="font-size: 16px;">Tips</a> <a href="/tags/dp/" style="font-size: 16px;">dp</a> <a href="/tags/Graph/" style="font-size: 16px;">Graph</a> <a href="/tags/idk/" style="font-size: 16px;">idk</a> <a href="/tags/HashMap/" style="font-size: 16px;">HashMap</a> <a href="/tags/JavaScript/" style="font-size: 16px;">JavaScript</a> <a href="/tags/回溯/" style="font-size: 16px;">回溯</a> <a href="/tags/Lambda/" style="font-size: 16px;">Lambda</a> <a href="/tags/Matrix/" style="font-size: 16px;">Matrix</a> <a href="/tags/Others/" style="font-size: 16px;">Others</a> <a href="/tags/Tree/" style="font-size: 28px;">Tree</a> <a href="/tags/Python/" style="font-size: 16px;">Python</a> <a href="/tags/Random/" style="font-size: 16px;">Random</a> <a href="/tags/Rest/" style="font-size: 16px;">Rest</a> <a href="/tags/Thoughts/" style="font-size: 16px;">Thoughts</a> <a href="/tags/Trie/" style="font-size: 16px;">Trie</a> <a href="/tags/Two-Pointer/" style="font-size: 16px;">Two Pointer</a>
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          栈和队列
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-03-09
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/Java基础/">Java基础</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#优先队列"><span class="toc-text">优先队列</span></a></li></ol>
     </div>
   </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h3><p>关于优先队列，以为自己算是很明白了，比如 增加新元素是 logN 时间<br>查看队首 肯定是 O(1)时间，如果是 找或删 某个非队首的元素，是O(n)时间</p>
+<p>所以，就想当然以为，构建一个优先队列肯定要 O(nlogn)时间了。。。</p>
+<p>没想到 ，大错特错了， 构建 堆的时间应该只要 O(N)而已，维基百科 很明确的写的O(N)</p>
+<p>以下分析来源 博客 <a href="http://blog.csdn.net/don_lvsml/article/details/19546997" target="_blank" rel="noopener">http://blog.csdn.net/don_lvsml/article/details/19546997</a><br>其实我还没怎么看懂，有兴趣的同学，可以讨论下</p>
+<blockquote>
+<p>下面分析时间复杂度<br>n个结点的完全二叉树（堆是完全二叉树）的深度为h（根的深度为1），则h和n之间满足 2^(h-2) &lt;n &lt;= 2^h，h近似等于log(n)+1。</p>
+<p>从代码的直观来看，每次调整一个结点需要log(n)，一共调整(n-1)/2个结点，故时间复杂度为O(nlogn)，<br>但要注意在中间过程中第s层的结点往下调整时实际只需最多调整（h-s）次，第s层一共调整2^(s-1)*(h-s)，这样时间复杂度可写成</p>
+</blockquote>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Deque/">Deque</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/03/09/thoughts/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Some Thoughts</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/03/08/matrix/">
+        <span class="next-text nav-default">二维矩阵</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
 
           </div>
           
