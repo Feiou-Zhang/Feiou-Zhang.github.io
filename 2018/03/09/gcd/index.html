@@ -17,12 +17,10 @@
 
 
 
-  <meta name="description" content="面试技巧"/>
+  <meta name="description" content="gcd"/>
 
 
 
-
-  <meta name="keywords" content="Tips, Feiou Zhang" />
 
 
 
@@ -42,7 +40,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/2018/03/09/interview/"/>
+<link rel="canonical" href="http://yoursite.com/2018/03/09/gcd/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -81,7 +79,7 @@
 
 
 
-    <title> 面试技巧 - Feiou Zhang </title>
+    <title> gcd - Feiou Zhang </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -197,7 +195,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          面试技巧
+          gcd
         
       </h1>
 
@@ -205,12 +203,6 @@
         <span class="post-time">
           2018-03-09
         </span>
-        
-          <div class="post-category">
-            
-              <a href="/categories/面试/">面试</a>
-            
-          </div>
         
         
       </div>
@@ -221,16 +213,17 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#BQ基本套路："><span class="toc-text">BQ基本套路：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#coding基本套路："><span class="toc-text">coding基本套路：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#design基本套路："><span class="toc-text">design基本套路：</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Greatest-Common-Divisor"><span class="toc-text">Greatest Common Divisor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lowest-Common-Multiple"><span class="toc-text">Lowest Common Multiple</span></a></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <h4 id="BQ基本套路："><a href="#BQ基本套路：" class="headerlink" title="BQ基本套路："></a>BQ基本套路：</h4><p>必须熟悉自己简历上的项目。每一个细节都要熟悉。<br>结合FB核心价值观，提前准备几个自己的真实故事。<br>Be yourself。</p>
-<h4 id="coding基本套路："><a href="#coding基本套路：" class="headerlink" title="coding基本套路："></a>coding基本套路：</h4><p>确认问题是什么。面试官期待你问很多问题，比如数组大小、越界怎么办、是int还是double、有重复吗、入参是什么、返回值是什么、按什么排序、边界条件有哪些，等等。同时，举几个简单的例子，与面试官互动，确保你真正理解了问题。<br>尝试一个暴力解法并分析时间空间复杂。但是切记，暴力解法说明即可，不需要写代码。<br>用最优解法来解并分析时间空间复杂度，得到面试官同意后，动手写代码。一边写一边记得与面试官沟通，确保在正确的道路上。如果面试官有问题打断你，绝大多数情况下是因为你的代码有问题，应该停止书写，并且与面试官沟通，及时解决。如果实在不知道怎么沟通，可以直接口述你手上写的代码。记住，一旦下笔，手速一定要够快，FB比较看重move fast。<br>写完后，自己检查代码，并确认边际条件有哪些，你是怎么处理的，最好是自己写几个test case来跑。然后，说明一下，如果再给你一些资源（比如更多时间，更多cpu，更多存储），你会怎么改让你的代码效率更高。<br>把写好的代码交给面试官，听并且回答follow up。</p>
-<h4 id="design基本套路："><a href="#design基本套路：" class="headerlink" title="design基本套路："></a>design基本套路：</h4><p>确认问题是什么。面试官期待你问很多问题，比如这个架构的应用场景是什么，有什么功能（涉及到具体的业务场景），有什么限制（cpu，gpu，存储，RT，QPS等等）与面试官互动，确保你了解了问题。<br>把提纲写在白板上，然后每条提纲逐条深入来讲。最重要的不是你用了什么，而是你为什么要这么用。<br>多与面试官沟通并察言观色，进一步了解面试官想问你的问题是什么，他期待你能回答到什么点上。这个除了经验，基本也是靠猜了。<br>画架构图的时候不一定要求专业、美观，但一定要有理有据，条理清晰。<br>结束后，向面试官说明，如果再给多一些资源，你会从哪几个方面去提高。<br>面试官一般会问一个问题：你的架构优缺点是什么，在什么时候会出问题，你打算如何设计来更好的解决这些潜在的问题？</p>
+        <p><img src="gcd.jpg" alt="gcd"></p>
+<h3 id="Greatest-Common-Divisor"><a href="#Greatest-Common-Divisor" class="headerlink" title="Greatest Common Divisor"></a>Greatest Common Divisor</h3><p>code first<br>​<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> b</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> gcd(b % a, a);</span><br><span class="line">&#125;</span><br><span class="line">​</span><br></pre></td></tr></table></figure></p>
+<p>we assume n is the common divisor for 1112 and 695<br>but we do not know the value of n<br>then we let 1112 = an and 695 = bn,<br>if (an - bn) and bn keep subtract each other, eventually n will be left (unless a == b)<br>​<br>the gcd of an and bn is the same as (a-b)n and bn<br>​<br>this way, we simple transfer a problem to a smaller problem.<br>​<br>same idea, a % b is relevant to a subtract n 6s, speed up the process<br>return gcd(b % a, a) is used to make sure the smaller number is always in the front.<br>​</p>
+<h3 id="Lowest-Common-Multiple"><a href="#Lowest-Common-Multiple" class="headerlink" title="Lowest Common Multiple"></a>Lowest Common Multiple</h3><p>​<br>lcm = a * b / gcd(b % a, a)</p>
 
       
     </div>
@@ -248,25 +241,19 @@
     
       <footer class="post-footer">
         
-          <div class="post-tags">
-            
-              <a href="/tags/Tips/">Tips</a>
-            
-          </div>
-        
         
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2018/03/09/kmp/">
+      <a class="prev" href="/2018/03/09/list/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">kmp算法</span>
+        <span class="prev-text nav-default">List</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
     
     
-      <a class="next" href="/2018/03/09/python/">
-        <span class="next-text nav-default">学习Python</span>
+      <a class="next" href="/2018/03/09/kmp/">
+        <span class="next-text nav-default">kmp算法</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>

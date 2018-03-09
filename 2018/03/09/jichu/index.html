@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="Java基础"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Feiou Zhang">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2018/03/09/jichu/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> Java基础 - Feiou Zhang </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Feiou Zhang</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Feiou Zhang</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Java基础
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-03-09
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#throws-and-throw"><span class="toc-text">throws and throw</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#autoboxing-andunboxing"><span class="toc-text">autoboxing andunboxing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Comparable-and-Comparato"><span class="toc-text">Comparable and Comparato</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#normal-case"><span class="toc-text">normal case</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#something-need-to-know-about-Abstraction"><span class="toc-text">something need to know about Abstraction</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#There-are-some-main-differences-between-abstract-class-and-interface"><span class="toc-text">There are some main differences between abstract class and interface</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Why-do-we-need-abstract-class-method"><span class="toc-text">Why do we need abstract class/method</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Encapsulation"><span class="toc-text">Encapsulation</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#about-the-setter-method"><span class="toc-text">about the setter method</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Polymorphism"><span class="toc-text">Polymorphism</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#inheritance-and-composition-Code-reuse"><span class="toc-text">inheritance and composition - Code reuse</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#something-need-to-know-about-Abstraction-1"><span class="toc-text">something need to know about Abstraction</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#There-are-some-main-differences-between-abstract-class-and-interface-1"><span class="toc-text">There are some main differences between abstract class and interface</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Why-do-we-need-abstract-class-method-1"><span class="toc-text">Why do we need abstract class/method</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Segment"><span class="toc-text">Data Segment</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="throws-and-throw"><a href="#throws-and-throw" class="headerlink" title="throws and throw"></a>throws and throw</h3><p>throws is using in the the method header<br>throw is using inside of the method</p>
+<p>throws: the method throws the exception, so the one who calles the method will deal with it.<br>throw: a statement throws the exception, so the current method will deal with it.</p>
+<p>throws can catch one or more exceptions<br>throw can catch only one kind of exception</p>
+<p>throws is actually meanning there is a possbile there could be a exception<br>throw is using when there is an actual exception</p>
+<p>you can use throws by itself<br>but you have to use throw with try-catch-finally or throw with throws together.</p>
+<p>the program will stop after executing the throw statement.</p>
+<p><a href="http://blog.csdn.net/ronawilliam/article/details/3299676" target="_blank" rel="noopener">http://blog.csdn.net/ronawilliam/article/details/3299676</a></p>
+<h3 id="autoboxing-andunboxing"><a href="#autoboxing-andunboxing" class="headerlink" title="autoboxing andunboxing"></a>autoboxing andunboxing</h3><p>java has 8 primitive data types<br>and there are 8 number classes for each primitive data type </p>
+<p>the reason why we need the number classes</p>
+<ol>
+<li>the collections only hold classes</li>
+<li>there are many static or non-static method for the number classes, like, Integer.MAX_VALUE, we do not need to memorize the value,</li>
+</ol>
+<h3 id="Comparable-and-Comparato"><a href="#Comparable-and-Comparato" class="headerlink" title="Comparable and Comparato"></a>Comparable and Comparato</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span> <span class="keyword">implements</span> <span class="title">Comparable</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> val;</span><br><span class="line">        <span class="keyword">int</span> index;</span><br><span class="line">        Node(<span class="keyword">int</span> val, <span class="keyword">int</span> index) &#123;</span><br><span class="line">            <span class="keyword">this</span>.val = val;</span><br><span class="line">            <span class="keyword">this</span>.index = index;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Object node)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            Node n = (Node)node;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.val - n.val;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minCostII</span><span class="params">(<span class="keyword">int</span>[][] costs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (costs == <span class="keyword">null</span> || costs.length == <span class="number">0</span> || costs[<span class="number">0</span>] == <span class="keyword">null</span> || costs[<span class="number">0</span>].length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        PriorityQueue&lt;Node&gt; lastCosts = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line">        <span class="comment">// PriorityQueue&lt;Node&gt; lastCosts = new PriorityQueue&lt;&gt;(new Comparator&lt;Node&gt;() &#123;</span></span><br><span class="line">        <span class="comment">//     @Override</span></span><br><span class="line">        <span class="comment">//     public int compare(Node n1, Node n2) &#123;</span></span><br><span class="line">        <span class="comment">//         return n1.val - n2.val;</span></span><br><span class="line">        <span class="comment">//     &#125;</span></span><br><span class="line">        <span class="comment">// &#125;);</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; costs[<span class="number">0</span>].length; ++i) &#123;</span><br><span class="line">            lastCosts.offer(<span class="keyword">new</span> Node(costs[<span class="number">0</span>][i], i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;  costs.length; ++i) &#123;</span><br><span class="line">            PriorityQueue&lt;Node&gt; currCosts = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line">            <span class="comment">// PriorityQueue&lt;Node&gt; currCosts = new PriorityQueue&lt;&gt;(new Comparator&lt;Node&gt;() &#123;</span></span><br><span class="line">            <span class="comment">//     @Override</span></span><br><span class="line">            <span class="comment">//     public int compare(Node n1, Node n2) &#123;</span></span><br><span class="line">            <span class="comment">//         return n1.val - n2.val;</span></span><br><span class="line">            <span class="comment">//     &#125;</span></span><br><span class="line">            <span class="comment">// &#125;);</span></span><br><span class="line">            <span class="keyword">int</span> lastMinIndex = lastCosts.peek().index;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; costs[<span class="number">0</span>].length; ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j == lastMinIndex) &#123;</span><br><span class="line">                    Node tmp = lastCosts.poll();</span><br><span class="line">                    currCosts.offer(<span class="keyword">new</span> Node(costs[i][j] + lastCosts.peek().val, j));</span><br><span class="line">                    lastCosts.offer(tmp);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    currCosts.offer(<span class="keyword">new</span> Node(costs[i][j] + lastCosts.peek().val, j));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            lastCosts = currCosts;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> lastCosts.peek().val;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Since Java 8, we can create a PriorityQueue with Comparator and <code>without</code> an inttial capacity！ yea~</p>
+</blockquote>
+<h4 id="normal-case"><a href="#normal-case" class="headerlink" title="normal case"></a>normal case</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] nums = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">3</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">6</span>&#125;;</span><br><span class="line">Arrays.sort(nums);</span><br><span class="line">System.out.print(Arrays.toString(nums));</span><br><span class="line">List&lt;Integer&gt; ls = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">ls.add(<span class="number">3</span>);</span><br><span class="line">ls.add(<span class="number">1</span>);</span><br><span class="line">ls.add(<span class="number">4</span>);</span><br><span class="line">ls.add(<span class="number">2</span>);</span><br><span class="line">Collections.sort(ls);</span><br><span class="line">System.out.print(ls);</span><br></pre></td></tr></table></figure>
+<p>What if we want to sort some people by their height?</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> weight，height;</span><br><span class="line">    <span class="function">Public <span class="title">Person</span><span class="params">(<span class="keyword">int</span> weight, <span class="keyword">int</span> height)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.weight = weight;</span><br><span class="line">        <span class="keyword">this</span>.height = height;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name + <span class="string">" "</span> + height;</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person[] p = <span class="keyword">new</span> Person[]&#123;<span class="keyword">new</span> Person(<span class="number">65</span>,<span class="number">177</span>), <span class="keyword">new</span> Person(<span class="number">64</span>,<span class="number">178</span>&#125;;</span><br><span class="line">Arrays.sort(p);</span><br></pre></td></tr></table></figure>
+<p>Of course, it will not sort the person, because the system does not know what to sort.</p>
+<p>In order to use the Arrays.sort or Collections.sort on any thing that are not natural sorting, we have to implement comparable to that class.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Person</span>&gt;</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Person person)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.height &lt; person.height)</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">this</span>.height &gt; person.height)</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;    </span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This seems easy to implement, however, what if we are not able to access or change any source code.<br>Then we will need to use <code>Comparator</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">personComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">Person</span>&gt;</span>&#123;</span><br><span class="line">    <span class="meta">@override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Person p1, Person p2)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(p1.height &lt; p2.height)</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(p1.height &gt; p2.height)</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Then base on the method, you can do any comparison you want.<br><em>For exampel</em><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//a static method of Arrays</span></span><br><span class="line">sort(T[] a, Comparator&lt;? <span class="keyword">super</span> T&gt; c)</span><br><span class="line">sort(person, <span class="keyword">new</span> personComparator());</span><br><span class="line"><span class="comment">//a static method of Collections</span></span><br><span class="line">sort(List&lt;T&gt; list, Comparator&lt;? <span class="keyword">super</span> T&gt; c)</span><br><span class="line"><span class="comment">//to create a PriorityQueue</span></span><br><span class="line">PriorityQueue(<span class="keyword">int</span> initialCapacity, Comparator&lt;? <span class="keyword">super</span> E&gt; comparator)</span><br><span class="line"></span><br><span class="line"><span class="comment">//to create a TreeSet or TreeMap</span></span><br><span class="line">TreeSet(Comparator&lt;? <span class="keyword">super</span> E&gt; comparator)</span><br><span class="line">TreeMap(Comparator&lt;? <span class="keyword">super</span> E&gt; comparator)</span><br></pre></td></tr></table></figure></p>
+<p>follow up<br>In Java 8, there is a new method called spliterator()…</p>
+<h5 id="something-need-to-know-about-Abstraction"><a href="#something-need-to-know-about-Abstraction" class="headerlink" title="something need to know about Abstraction"></a>something need to know about Abstraction</h5><ul>
+<li>if there is at lease one abstract method, the class has to be abstract.</li>
+<li>but an abstract class may or may not contain abstract methods.</li>
+<li>when a non-abstract extends an abstract class, the subclass must override all of the abstract methods.</li>
+<li>when a abstract extends an abstract class, there is no need to override all of the abstract methods, even can not have the same abstract method.</li>
+<li>abstract and final can not describe a class at the same time obviously, abstract can not destribe a method with private, static, and final at the same time.</li>
+<li>because as an abstract class or method, there is no real meaning by it self, it has to be extended or override, the final or static just works in the oppsite way.</li>
+</ul>
+<h5 id="There-are-some-main-differences-between-abstract-class-and-interface"><a href="#There-are-some-main-differences-between-abstract-class-and-interface" class="headerlink" title="There are some main differences between abstract class and interface"></a>There are some main differences between abstract class and interface</h5><ol>
+<li>of course the syntax will be different<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">move</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">crawl</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>a subclass can extends at most one abstract class but can implements many interfaces</p>
+<ol>
+<li>from the design level<br>Generally, an abstract class abstract all the common objects, however, the interface abtracts all the common functionalities or behaviors cross different objects </li>
+</ol>
+<h5 id="Why-do-we-need-abstract-class-method"><a href="#Why-do-we-need-abstract-class-method" class="headerlink" title="Why do we need abstract class/method"></a>Why do we need abstract class/method</h5><p>This is a question I do not understand well for a while.<br>If you ask Google, many people will tell you the following:</p>
+<blockquote>
+<p>if you have an Animal class, and a sound method in it, as different animals may sound different, it is better to implement it in each subclass. Also, logically, there is no specific sound for an abstract animal, so we can make the sound method abstract which is a empty method.</p>
+</blockquote>
+<p>This sounds reasonable, however, it seems answered a different question which is why a abstract method should be empty. As we will need to create the method in each subclass, the empty method in the abstract class seems redundant and useless.</p>
+<p>In my opinion, there are two main reasons that we need abstract class/method</p>
+<ol>
+<li>As when a non-abstract extends an abstract class, the subclass must override all of the abstract methods, to have abstract method is forcing the subclass to override those methods</li>
+<li>To keep the empty abstract methods in the superclass just like to have a table of content in a book, it gives other developers an idea what does this class has and also remind other developers to override those methods.</li>
+</ol>
+<h4 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h4><blockquote>
+<p>encapsulation is never designed to hide the <code>data</code></p>
+</blockquote>
+<ol>
+<li><p>encapsulation allows you to encapsulate things that should not be modified by other parts of your program.</p>
+</li>
+<li><p>encapsulation hides unnecessary/complex detaisl from the other, makes objects easier to use and understand.</p>
+</li>
+</ol>
+<h5 id="about-the-setter-method"><a href="#about-the-setter-method" class="headerlink" title="about the setter method"></a>about the setter method</h5><ol>
+<li>use setter only if it necessary</li>
+<li>setter can be declared as protected if necessary</li>
+<li>setter can be used for validation or limit the values that can be stored in a field</li>
+<li>provide thread satety by synchronizing the method</li>
+</ol>
+<blockquote>
+<ol>
+<li>暴露了太多使用者不需要知道的细节，增加心智负担<br>这一条很好理解，就问你是喜欢看10行的接口定义，还是喜欢看100行的实现。</li>
+<li>修改时很容易破坏兼容性<br>比如某个暴露出来的属性仅仅是内部使用，但是外部使用者也使用了它，那么当他变化时（比如你觉得名字不好，换个名字，或者觉得没用，去掉了这个属性）那么当你更新这个类的时候，使用者那边就要出现问题了。有了接口以后，尽可能保证接口不变，即使真的要移除某个属性（比如变成计算属性），也可以修改相应的访问器来解决。</li>
+<li>安全性不足<br>这里的安全性当然不是指恶意使用者的恶意修改（这种情况下，用private和public根本没用），而是指正常使用下从外部意外的修改了内部状态或者使用了不合法的值的所造成的一系列问题，因为属性没办法监控修改路径，也不能前置检查输入的合法性——想想看，如果有这个需求时，你能想到的方法是不是就是加一个设置函数？</li>
+</ol>
+</blockquote>
+<h4 id="Polymorphism"><a href="#Polymorphism" class="headerlink" title="Polymorphism"></a>Polymorphism</h4><ol>
+<li>static(complie time)<br> method overloading: this allows to have more than one method having the same name but with different parameters in numbers, sequence and data type.<br> <code>Method return type doesn’t matter in case of overloading</code></li>
+</ol>
+<p>In java API, there are many examples, like substring, you can do substring(int startindex, int endindex), or you can also do substring(int startindex)<br>Also, sometimes when we use helper function to solve some problem recursionly, we can also use static polymorphism.</p>
+<ol>
+<li>dynamic(run time)<br> method overriding: this allows the subclasses have the excactlly same method name and parameters to override the method in the superclass</li>
+<li>polymorphism also uesd as a super class reference refer to a subclass object<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">or</span><br><span class="line">Set&lt;Integer&gt; ts = <span class="keyword">new</span> TreeSet&lt;&gt;();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><code>if ues a super class reference refer to a subclass object, only the methods in both superclass and subclass can be used.</code><br>for example<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the void method trimToSize() is only in ArrayList but not in List</span></span><br><span class="line">List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">list.trimToSize(); <span class="comment">// will get a error.</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="inheritance-and-composition-Code-reuse"><a href="#inheritance-and-composition-Code-reuse" class="headerlink" title="inheritance and composition - Code reuse"></a>inheritance and composition - <code>Code reuse</code></h4><p>the rule:<br>when two classes have a <code>IS-A</code> relationship, then use inheritance<br><code>otherwise</code> use composition</p>
+<ol>
+<li>the change of superclass will affect to all the subclass, too many inheritance will make the project more difficult to maintain</li>
+</ol>
+<p>Summary</p>
+<ul>
+<li>An object is an instance of a class.</li>
+<li>Encapsulation provides the security that keeps data and methods safe from inadvertent changes.</li>
+<li>Inheritance is a parent-child relationship of a class which is mainly used for code reusability.</li>
+<li>Polymorphism definition is that Poly means many and morphos means forms.</li>
+<li>Using abstraction one can simulate real world objects.</li>
+<li>Abstraction provides advantage of code reuse</li>
+<li>Abstraction enables program open for extension</li>
+</ul>
+<h5 id="something-need-to-know-about-Abstraction-1"><a href="#something-need-to-know-about-Abstraction-1" class="headerlink" title="something need to know about Abstraction"></a>something need to know about Abstraction</h5><ul>
+<li>if there is at lease one abstract method, the class has to be abstract.</li>
+<li>but an abstract class may or may not contain abstract methods.</li>
+<li>when a non-abstract extends an abstract class, the subclass must override all of the abstract methods.</li>
+<li>when a abstract extends an abstract class, there is no need to override all of the abstract methods, even can not have the same abstract method.</li>
+<li>abstract and final can not describe a class at the same time obviously, abstract can not destribe a method with private, static, and final at the same time.</li>
+<li>because as an abstract class or method, there is no real meaning by it self, it has to be extended or override, the final or static just works in the oppsite way.</li>
+</ul>
+<h5 id="There-are-some-main-differences-between-abstract-class-and-interface-1"><a href="#There-are-some-main-differences-between-abstract-class-and-interface-1" class="headerlink" title="There are some main differences between abstract class and interface"></a>There are some main differences between abstract class and interface</h5><ol>
+<li>of course the syntax will be different<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">move</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">crawl</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>a subclass can extends at most one abstract class but can implements many interfaces</p>
+<ol>
+<li>from the design level<br>Generally, an abstract class abstract all the common objects, however, the interface abtracts all the common functionalities or behaviors cross different objects </li>
+</ol>
+<h5 id="Why-do-we-need-abstract-class-method-1"><a href="#Why-do-we-need-abstract-class-method-1" class="headerlink" title="Why do we need abstract class/method"></a>Why do we need abstract class/method</h5><p>This is a question I do not understand well for a while.<br>If you ask Google, many people will tell you the following:</p>
+<blockquote>
+<p>if you have an Animal class, and a sound method in it, as different animals may sound different, it is better to implement it in each subclass. Also, logically, there is no specific sound for an abstract animal, so we can make the sound method abstract which is a empty method.</p>
+</blockquote>
+<p>This sounds reasonable, however, it seems answered a different question which is why a abstract method should be empty. As we will need to create the method in each subclass, the empty method in the abstract class seems redundant and useless.</p>
+<p>In my opinion, there are two main reasons that we need abstract class/method</p>
+<ol>
+<li>As when a non-abstract extends an abstract class, the subclass must override all of the abstract methods, to have abstract method is forcing the subclass to override those methods</li>
+<li>To keep the empty abstract methods in the superclass just like to have a table of content in a book, it gives other developers an idea what does this class has and also remind other developers to override those methods.</li>
+</ol>
+<h3 id="Data-Segment"><a href="#Data-Segment" class="headerlink" title="Data Segment"></a>Data Segment</h3><p>为什么String=String？</p>
+<p>在JVM中有一块区域叫做常量池，关于常量池，我在写虚拟机的时候有专门提到</p>
+<p>常量池中的数据是那些在编译期间被确定，并被保存在已编译的.class文件中的一些数据。除了包含所有的8种基本数据类型（char、byte、short、int、long、float、double、boolean）外，还有String及其数组的常量值，另外还有一些以文本形式出现的符号引用。</p>
+<p>Java栈的特点是存取速度快（比堆块），但是空间小，数据生命周期固定，只能生存到方法结束。我们定义的boolean b = true、char c = ‘c’、String str = “123”，这些语句，我们拆分为几部分来看：</p>
+<p>1、true、c、123，这些等号右边的指的是编译期间可以被确定的内容，都被维护在常量池中</p>
+<p>2、b、c、str这些等号左边第一个出现的指的是一个引用，引用的内容是等号右边数据在常量池中的地址</p>
+<p>3、boolean、char、String这些是引用的类型</p>
+<p>栈有一个特点，就是数据共享。回到我们第一个例子，第五行String str0 = “123”，编译的时候，在常量池中创建了一个常量”123”，然后走第六行String str1 = “123”，先去常量池中找有没有这个”123”，发现有，str1也指向常量池中的”123”，所以第七行的str0 == str1返回的是true，因为str0和str1指向的都是常量池中的”123”这个字符串的地址。当然如果String str1 = “234”，就又不一样了，因为常量池中没有”234”，所以会在常量池中创建一个”234”，然后str1代表的是这个”234”的地址。分析了String，其实其他基本数据类型也都是一样的：先看常量池中有没有要创建的数据，有就返回数据的地址，没有就创建一个。</p>
+<p>第二个例子呢？Java虚拟机的解释器每遇到一个new关键字，都会在堆内存中开辟一块内存来存放一个String对象，所以str2、str3指向的堆内存中虽然存储的是相等的”234”，但是由于是两块不同的堆内存，因此str2 == str3返回的仍然是false，网上找到一张图表示一下这个概念：</p>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2018/03/09/binarySearch/">
+        <span class="next-text nav-default">Binary Search</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:feiou.zhang@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.linkedin.com/in/feiouzhang/" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Feiou-Zhang" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2017 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Feiou Zhang</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

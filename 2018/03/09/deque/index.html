@@ -221,7 +221,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#优先队列"><span class="toc-text">优先队列</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#优先队列"><span class="toc-text">优先队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deque-ArrayDeque-LinkedList"><span class="toc-text">Deque, ArrayDeque, LinkedList</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ArrayDeque"><span class="toc-text">ArrayDeque</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stack-and-Queue"><span class="toc-text">Stack and Queue</span></a></li></ol>
     </div>
   </div>
 
@@ -236,6 +236,15 @@
 <p>下面分析时间复杂度<br>n个结点的完全二叉树（堆是完全二叉树）的深度为h（根的深度为1），则h和n之间满足 2^(h-2) &lt;n &lt;= 2^h，h近似等于log(n)+1。</p>
 <p>从代码的直观来看，每次调整一个结点需要log(n)，一共调整(n-1)/2个结点，故时间复杂度为O(nlogn)，<br>但要注意在中间过程中第s层的结点往下调整时实际只需最多调整（h-s）次，第s层一共调整2^(s-1)*(h-s)，这样时间复杂度可写成</p>
 </blockquote>
+<h3 id="Deque-ArrayDeque-LinkedList"><a href="#Deque-ArrayDeque-LinkedList" class="headerlink" title="Deque, ArrayDeque, LinkedList"></a>Deque, ArrayDeque, LinkedList</h3><blockquote>
+<blockquote>
+<p>Generally, we should always use ArrayDeque instead of LinkedList<br>however, ArrayDeque does not take null value</p>
+<p>ref: <a href="http://blog.jrwang.me/2016/java-collections-deque-arraydeque/" target="_blank" rel="noopener">http://blog.jrwang.me/2016/java-collections-deque-arraydeque/</a><br>写的很好的一篇关于deque 源码分析的<br><img src="deque.png" alt="deque"><br>因为ArrayDeque 的内部实现其实是数组，外加头尾2个指针，为了减少空间的浪费 以及扩容的开销，<br>聪明的java 设计者，把array当成了一个环，因为 deque无论如何只能从头尾 增删 元素，所以，元素必然是连续的，这样，把开始为占用的和已经删除的元素标为null，这样，下次新增元素的时候，就可以复用数组。 赞！<br>这也就是为什么 array 不能加null的原因了，因为，如果你可以加null，那么deque 就不知道，这是一个空位置可以用呢还是 user存的null呢。</p>
+</blockquote>
+</blockquote>
+<h4 id="ArrayDeque"><a href="#ArrayDeque" class="headerlink" title="ArrayDeque"></a>ArrayDeque</h4><p>以下几个很绕，尤其是混合使用的时候。</p>
+<p>offer = offerLast 正常入队，加到队尾<br>push  = offerFirst 模拟入栈，加到栈顶<br>peek = peekFirst<br>这个peek 和 peekFirst 都是check栈顶（队首）所以既是队列的peek 也是堆栈的peek<br>pop = poll = pollFirst 删除并返回栈顶（队首），因为当做堆栈的时候，push把元素放到了数组的前面（栈顶），所以，pop 和 poll 这里返回的应该是同一个元素<br>peekLast 查看栈顶队尾（数组末端）的元素，也就是刚入队的元素<br>pollLast 删除并返回队尾（数组末端）的元素，也就是刚入队的元素</p>
+<h3 id="Stack-and-Queue"><a href="#Stack-and-Queue" class="headerlink" title="Stack and Queue"></a>Stack and Queue</h3><p>Use pop and peek will throw exception if there is no elements in the stack</p>
 
       
     </div>

@@ -17,12 +17,12 @@
 
 
 
-  <meta name="description" content="面试技巧"/>
+  <meta name="description" content="List"/>
 
 
 
 
-  <meta name="keywords" content="Tips, Feiou Zhang" />
+  <meta name="keywords" content="list, Feiou Zhang" />
 
 
 
@@ -42,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/2018/03/09/interview/"/>
+<link rel="canonical" href="http://yoursite.com/2018/03/09/list/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -81,7 +81,7 @@
 
 
 
-    <title> 面试技巧 - Feiou Zhang </title>
+    <title> List - Feiou Zhang </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -197,7 +197,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          面试技巧
+          List
         
       </h1>
 
@@ -208,7 +208,7 @@
         
           <div class="post-category">
             
-              <a href="/categories/面试/">面试</a>
+              <a href="/categories/数据结构/">数据结构</a>
             
           </div>
         
@@ -221,16 +221,28 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#BQ基本套路："><span class="toc-text">BQ基本套路：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#coding基本套路："><span class="toc-text">coding基本套路：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#design基本套路："><span class="toc-text">design基本套路：</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#When-to-use-LinkedList-over-ArrayList"><span class="toc-text">When to use LinkedList over ArrayList?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#List-add-addAll"><span class="toc-text">List  - add  addAll</span></a></li></ol>
     </div>
   </div>
 
 
     <div class="post-content">
       
-        <h4 id="BQ基本套路："><a href="#BQ基本套路：" class="headerlink" title="BQ基本套路："></a>BQ基本套路：</h4><p>必须熟悉自己简历上的项目。每一个细节都要熟悉。<br>结合FB核心价值观，提前准备几个自己的真实故事。<br>Be yourself。</p>
-<h4 id="coding基本套路："><a href="#coding基本套路：" class="headerlink" title="coding基本套路："></a>coding基本套路：</h4><p>确认问题是什么。面试官期待你问很多问题，比如数组大小、越界怎么办、是int还是double、有重复吗、入参是什么、返回值是什么、按什么排序、边界条件有哪些，等等。同时，举几个简单的例子，与面试官互动，确保你真正理解了问题。<br>尝试一个暴力解法并分析时间空间复杂。但是切记，暴力解法说明即可，不需要写代码。<br>用最优解法来解并分析时间空间复杂度，得到面试官同意后，动手写代码。一边写一边记得与面试官沟通，确保在正确的道路上。如果面试官有问题打断你，绝大多数情况下是因为你的代码有问题，应该停止书写，并且与面试官沟通，及时解决。如果实在不知道怎么沟通，可以直接口述你手上写的代码。记住，一旦下笔，手速一定要够快，FB比较看重move fast。<br>写完后，自己检查代码，并确认边际条件有哪些，你是怎么处理的，最好是自己写几个test case来跑。然后，说明一下，如果再给你一些资源（比如更多时间，更多cpu，更多存储），你会怎么改让你的代码效率更高。<br>把写好的代码交给面试官，听并且回答follow up。</p>
-<h4 id="design基本套路："><a href="#design基本套路：" class="headerlink" title="design基本套路："></a>design基本套路：</h4><p>确认问题是什么。面试官期待你问很多问题，比如这个架构的应用场景是什么，有什么功能（涉及到具体的业务场景），有什么限制（cpu，gpu，存储，RT，QPS等等）与面试官互动，确保你了解了问题。<br>把提纲写在白板上，然后每条提纲逐条深入来讲。最重要的不是你用了什么，而是你为什么要这么用。<br>多与面试官沟通并察言观色，进一步了解面试官想问你的问题是什么，他期待你能回答到什么点上。这个除了经验，基本也是靠猜了。<br>画架构图的时候不一定要求专业、美观，但一定要有理有据，条理清晰。<br>结束后，向面试官说明，如果再给多一些资源，你会从哪几个方面去提高。<br>面试官一般会问一个问题：你的架构优缺点是什么，在什么时候会出问题，你打算如何设计来更好的解决这些潜在的问题？</p>
+        <h3 id="When-to-use-LinkedList-over-ArrayList"><a href="#When-to-use-LinkedList-over-ArrayList" class="headerlink" title="When to use LinkedList over ArrayList?"></a>When to use LinkedList over ArrayList?</h3><p>ArrayList with ArrayDeque are preferable in much more use-cases than LinkedList. Not sure — just start with ArrayList.</p>
+<p>LinkedList and ArrayList are two different implementations of the List interface. LinkedList implements it with a doubly-linked list. ArrayList implements it with a dynamically re-sizing array.</p>
+<p>As with standard linked list and array operations, the various methods will have different algorithmic runtimes.</p>
+<p>For LinkedList<e></e></p>
+<p>get(int index) is O(n/4) average<br>add(E element) is O(1)<br>add(int index, E element) is O(n/4) average<br>     but O(1) when index = 0 &lt;— main benefit of LinkedList<e><br>remove(int index) is O(n/4) average<br>Iterator.remove() is O(1) &lt;— main benefit of LinkedList<e><br>ListIterator.add(E element) is O(1) &lt;— main benefit of LinkedList<e><br>Note: O(n/4) is average, O(1) best case (e.g. index = 0), O(n/2) worst case (middle of list)</e></e></e></p>
+<p>For ArrayList<e></e></p>
+<p>get(int index) is O(1) &lt;— main benefit of ArrayList<e><br>add(E element) is O(1) amortized, but O(n) worst-case since the array must be resized and copied<br>add(int index, E element) is O(n/2) average<br>remove(int index) is O(n/2) average<br>Iterator.remove() is O(n/2) average<br>ListIterator.add(E element) is O(n/2) average<br>Note: O(n/2) is average, O(1) best case (end of list), O(n) worst case (start of list)</e></p>
+<p>LinkedList<e> allows for constant-time insertions or removals using iterators, but only sequential access of elements. In other words, you can walk the list forwards or backwards, but finding a position in the list takes time proportional to the size of the list. Javadoc says “operations that index into the list will traverse the list from the beginning or the end, whichever is closer”, so those methods are O(n/4) on average, though O(1) for index = 0.</e></p>
+<p>ArrayList<e>, on the other hand, allow fast random read access, so you can grab any element in constant time. But adding or removing from anywhere but the end requires shifting all the latter elements over, either to make an opening or fill the gap. Also, if you add more elements than the capacity of the underlying array, a new array (1.5 times the size) is allocated, and the old array is copied to the new one, so adding to an ArrayList is O(n) in the worst case but constant on average.</e></p>
+<p>So depending on the operations you intend to do, you should choose the implementations accordingly. Iterating over either kind of List is practically equally cheap. (Iterating over an ArrayList is technically faster, but unless you’re doing something really performance-sensitive, you shouldn’t worry about this – they’re both constants.)</p>
+<p>The main benefits of using a LinkedList arise when you re-use existing iterators to insert and remove elements. These operations can then be done in O(1) by changing the list locally only. In an array list, the remainder of the array needs to be moved (i.e. copied). On the other side, seeking in a LinkedList means following the links in O(n/2) for worst case, whereas in an ArrayList the desired position can be computed mathematically and accessed in O(1).</p>
+<p>Another benefit of using a LinkedList arise when you add or remove from the head of the list, since those operations are O(1), while they are O(n) for ArrayList. Note that ArrayDeque may be a good alternative to LinkedList for adding and removing from the head, but it is not a List.</p>
+<p>Also, if you have large lists, keep in mind that memory usage is also different. Each element of a LinkedList has more overhead since pointers to the next and previous elements are also stored. ArrayLists don’t have this overhead. However, ArrayLists take up as much memory as is allocated for the capacity, regardless of whether elements have actually been added.</p>
+<p>The default initial capacity of an ArrayList is pretty small (10 from Java 1.4 - 1.8). But since the underlying implementation is an array, the array must be resized if you add a lot of elements. To avoid the high cost of resizing when you know you’re going to add a lot of elements, construct the ArrayList with a higher initial capacity.<br><a href="https://stackoverflow.com/questions/322715/when-to-use-linkedlist-over-arraylist" target="_blank" rel="noopener">from stackoverflow</a></p>
+<h3 id="List-add-addAll"><a href="#List-add-addAll" class="headerlink" title="List  - add  addAll"></a>List  - add  addAll</h3><p>when need add list to a list, we must use addAll instead of add</p>
 
       
     </div>
@@ -250,7 +262,7 @@
         
           <div class="post-tags">
             
-              <a href="/tags/Tips/">Tips</a>
+              <a href="/tags/list/">list</a>
             
           </div>
         
@@ -258,15 +270,15 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2018/03/09/kmp/">
+      <a class="prev" href="/2018/03/09/binarySearch/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">kmp算法</span>
+        <span class="prev-text nav-default">Binary Search</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
     
     
-      <a class="next" href="/2018/03/09/python/">
-        <span class="next-text nav-default">学习Python</span>
+      <a class="next" href="/2018/03/09/gcd/">
+        <span class="next-text nav-default">gcd</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
