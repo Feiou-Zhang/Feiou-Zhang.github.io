@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="array"/>
+
+
+
+
+  <meta name="keywords" content="Array, Feiou Zhang" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Feiou Zhang">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/03/13/array/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> array - Feiou Zhang </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Feiou Zhang</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Feiou Zhang</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          array
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-03-13
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/Java基础/">Java基础</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2D-array"><span class="toc-text">2D array</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2D-array-asList-very-important"><span class="toc-text">2D array asList very important</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Characteristic"><span class="toc-text">Characteristic:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Advantages"><span class="toc-text">Advantages:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Disadvantages"><span class="toc-text">Disadvantages:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Some-common-usage"><span class="toc-text">Some common usage</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Declare-an-array"><span class="toc-text">Declare an array</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Print-out-an-array"><span class="toc-text">Print out an array</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Copy-an-array"><span class="toc-text">Copy an array</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Convert-an-array-to-a-list"><span class="toc-text">Convert an array to a list</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Something-need-to-be-careful-asList"><span class="toc-text">Something need to be careful asList</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="2D-array"><a href="#2D-array" class="headerlink" title="2D array"></a>2D array</h3><p>when initializing a 2D array, it is optional to give the size of the<br>“column”<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//first way</span></span><br><span class="line"><span class="keyword">int</span>[][] matrix = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][<span class="number">3</span>];</span><br><span class="line"><span class="comment">//second way</span></span><br><span class="line"><span class="keyword">int</span>[][] matrix = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][];</span><br><span class="line">matrix[<span class="number">0</span>] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">matrix[<span class="number">1</span>] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>];</span><br><span class="line">matrix[<span class="number">2</span>] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br></pre></td></tr></table></figure></p>
+<h4 id="2D-array-asList-very-important"><a href="#2D-array-asList-very-important" class="headerlink" title="2D array asList very important"></a>2D array asList <code>very important</code></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//we all know a 1D array can be easily convert to a list</span></span><br><span class="line">String[] strs = <span class="keyword">new</span> String[]&#123;<span class="number">1</span>,<span class="number">2</span>&#125;;</span><br><span class="line">List&lt;String&gt; ls = Arrays.asList(strs);</span><br><span class="line"></span><br><span class="line"><span class="comment">//actually we can also convert a 2D array to a 2D list</span></span><br><span class="line">String[][] strs = <span class="keyword">new</span> String[][]&#123;<span class="number">1</span>,<span class="number">2</span>&#125;&#123;<span class="number">1</span>,<span class="number">2</span>&#125;;</span><br><span class="line">List&lt;List&lt;String&gt;&gt; = (List) Arrays.asList(strs);</span><br></pre></td></tr></table></figure>
+<h3 id="Characteristic"><a href="#Characteristic" class="headerlink" title="Characteristic:"></a>Characteristic:</h3><ul>
+<li>There will be only one type of date in an array. Strongly Typed.</li>
+<li>The size of the array is not changeable. In other words, fixed size.</li>
+<li><p>Array is one kind of object.</p>
+<h4 id="Advantages"><a href="#Advantages" class="headerlink" title="Advantages:"></a>Advantages:</h4></li>
+<li><p>Fast. Access to the elements by using the index that provided by arrays.</p>
+</li>
+<li>Can be easily implemented with other data structures.</li>
+<li>Can store many elements at a time(minor).<h4 id="Disadvantages"><a href="#Disadvantages" class="headerlink" title="Disadvantages:"></a>Disadvantages:</h4></li>
+</ul>
+<p>You must know the size when you create an array.<br>As the size is fixed, it will be very difficult to add or remove elements from an array.</p>
+<blockquote>
+<p>After understanding the characteristics of array, you will be able to determine when should you choose array. And you will bave an efficient data structure if all those three items satisfied.</p>
+</blockquote>
+<ul>
+<li>You know the size</li>
+<li>There will be only one type.</li>
+<li>You do not need to add or remove any elements.</li>
+</ul>
+<h4 id="Some-common-usage"><a href="#Some-common-usage" class="headerlink" title="Some common usage"></a>Some common usage</h4><h5 id="Declare-an-array"><a href="#Declare-an-array" class="headerlink" title="Declare an array"></a>Declare an array</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] array1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line"><span class="keyword">int</span>[] array2 = &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] array3 = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="Print-out-an-array"><a href="#Print-out-an-array" class="headerlink" title="Print out an array"></a>Print out an array</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] array1 = &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">7</span>&#125;;</span><br><span class="line">System.out.println(array1); <span class="comment">//this will only print out the address</span></span><br><span class="line">String str = Arrays.toString(array1);</span><br><span class="line">System.out.print(str);</span><br></pre></td></tr></table></figure>
+<h5 id="Copy-an-array"><a href="#Copy-an-array" class="headerlink" title="Copy an array"></a><strong>Copy an array</strong></h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//this will be the most efficient way to copy an array</span></span><br><span class="line">System.arraycopy(src, startindex, dest, startindex, length);</span><br><span class="line"><span class="comment">//following two actually using the system arraycopy method, so will less efficient</span></span><br><span class="line">Arrays.copyof(src, length);</span><br><span class="line">Arrays.copyofRange(src, startindex, endindex);</span><br><span class="line"><span class="comment">//"=" this will only copy the address to the new reference</span></span><br><span class="line">b=a;</span><br></pre></td></tr></table></figure>
+<h5 id="Convert-an-array-to-a-list"><a href="#Convert-an-array-to-a-list" class="headerlink" title="Convert an array to a list"></a>Convert an array to a list</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String[] array1 = <span class="keyword">new</span> String[]&#123;<span class="string">"1"</span>,<span class="string">"3"</span>,<span class="string">"7"</span>&#125;;</span><br><span class="line">ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;(Arrays.asList(array1));</span><br><span class="line">System.out.print(list);</span><br></pre></td></tr></table></figure>
+<h5 id="Something-need-to-be-careful-asList"><a href="#Something-need-to-be-careful-asList" class="headerlink" title="Something need to be careful asList"></a>Something need to be careful <code>asList</code></h5><ul>
+<li>The asList will NOT work for any of the 8 primitive type arrays.</li>
+<li>Even for an object, by simply using the Array.asList() will not have the add() or remove() methods, because it returns a <strong>fixed-size</strong> list backed by the specified array.<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//two ways to use the asList()</span></span><br><span class="line"><span class="number">1</span>. List&lt;String&gt; ls = Arrays.asList(<span class="keyword">new</span> String[]&#123;<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>&#125;);</span><br><span class="line"><span class="number">2</span>. List&lt;String&gt; ls = Arrays.asList(<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>);</span><br><span class="line"></span><br><span class="line">String[] strs = <span class="keyword">new</span> String[]&#123;<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>&#125;;</span><br><span class="line">List&lt;String&gt; ls = Arrays.asList(strs);</span><br><span class="line">System.out.println(ls); <span class="comment">//[a, b, c]</span></span><br><span class="line">System.out.println(ls.size());<span class="comment">//3</span></span><br><span class="line">System.out.println(ls.contains(<span class="string">"a"</span>));<span class="comment">//true</span></span><br><span class="line">System.out.println(ls.get(<span class="number">1</span>));<span class="comment">//b</span></span><br><span class="line">ls.set(<span class="number">0</span>,<span class="string">"d"</span>);</span><br><span class="line">System.out.println(ls);<span class="comment">//[d, b, c]</span></span><br><span class="line">ls.add(<span class="string">"e"</span>);<span class="comment">//Error:</span></span><br><span class="line">ls.remove(<span class="string">"b"</span>);<span class="comment">//Error:</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Array/">Array</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/02/10/Sort/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">排序</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/03/13/iterator/">
+        <span class="next-text nav-default">Iterator</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:feiou.zhang@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.linkedin.com/in/feiouzhang/" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Feiou-Zhang" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2017 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Feiou Zhang</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>

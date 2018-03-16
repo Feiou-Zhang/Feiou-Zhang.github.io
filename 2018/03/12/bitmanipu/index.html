@@ -17,8 +17,12 @@
 
 
 
+  <meta name="description" content="bitmanipu"/>
 
 
+
+
+  <meta name="keywords" content="Bit Manipulation, Feiou Zhang" />
 
 
 
@@ -38,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/page/2/"/>
+<link rel="canonical" href="http://yoursite.com/2018/03/12/bitmanipu/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -77,9 +81,7 @@
 
 
 
-    <title>
-  
-</title>
+    <title> bitmanipu - Feiou Zhang </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -191,237 +193,111 @@
           <div id="content" class="content">
             
   
-  <section id="archive" class="archive">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          bitmanipu
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-03-12
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/Java-基础/">Java 基础</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
     
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Wiki"><span class="toc-text">Wiki</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Details"><span class="toc-text">Details</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Basics"><span class="toc-text">Basics</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples"><span class="toc-text">Examples</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="Wiki"><a href="#Wiki" class="headerlink" title="Wiki"></a>Wiki</h3><p>位操作是一种通过算法来处理比一个单词更短的数据块或其他数据块的行为。需要位操作的计算机编程任务包括低级设备控制、<br>错误检测和校正算法、数据压缩、加密算法和优化。对于大多数其他任务，现代编程语言允许程序员直接使用抽象而不是表示抽象的位。<br>执行位操作的源代码可以使用位操作: and(&amp;), or(|)，xor(^)，not(~)，和 bit shift(&gt;&gt;, &lt;&lt;)。</p>
+<p>在某些情况下，位操作可以消除或减少对数据结构进行循环的需要，并且可以提供多倍的速度，因为位操作是并行处理的，<br>但是代码会变得<code>更难</code>编写和维护。</p>
+<h3 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h3><h4 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h4><p>位操作的核心是位操作运算符 and(&amp;), or(|)，xor(^)，not(~)，和 bit shift(&gt;&gt;, &lt;&lt;)。<br>没有任何布尔运算符对应于位移的 xor(^)，但是有一个简单的解释。xor操作接受两个输入，如果两个输入一样，返回0，不一样返回1，<br>也就是说，如果两个输入都是1或者两个输入都是0，则返回0。</p>
+<ul>
+<li>Set union A | B (返回所有)</li>
+<li>Set intersection A &amp; B （返回重叠部分）</li>
+<li>Set subtraction A &amp; ~B ()</li>
+<li>Set negation ALL_BITS ^ A or ~A ()</li>
+<li>Set bit A |= 1 &lt;&lt; bit ()</li>
+<li>Clear bit A &amp;= ~(1 &lt;&lt; bit) ()</li>
+<li>Test bit (A &amp; 1 &lt;&lt; bit) != 0 ()</li>
+<li>Extract last bit A&amp;-A or A&amp;~(A-1) or x^(x&amp;(x-1)) ()</li>
+<li>Remove last bit A&amp;(A-1) ()</li>
+<li>Get all 1-bits ~0 ()<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3>count给定数字的二进制表示中的1</li>
+</ul>
+<p>本文是翻译这个帖子<a href="https://leetcode.com/problems/sum-of-two-integers/discuss/84278/A-summary:-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently" target="_blank" rel="noopener">原文</a></p>
+
+      
+    </div>
 
     
       
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-02-22
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/22/lambda/" class="archive-post-link">
-            Lambda
-          </a>
-        </span>
-      </div>
-    
       
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-02-22
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/22/kth/" class="archive-post-link">
-            第k系列
-          </a>
-        </span>
-      </div>
-    
+
+
       
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-02-22
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/22/others/" class="archive-post-link">
-            杂题
-          </a>
-        </span>
-      </div>
-    
       
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-02-21
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/21/backtracking/" class="archive-post-link">
-            回溯
-          </a>
-        </span>
-      </div>
     
-      
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-02-16
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/16/decode/" class="archive-post-link">
-            Encode, Decode
-          </a>
-        </span>
-      </div>
     
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-02-14
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/14/postorder/" class="archive-post-link">
-            先序，后序，层序遍历的应用
-          </a>
-        </span>
-      </div>
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Bit-Manipulation/">Bit Manipulation</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
     
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-02-13
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/13/dp/" class="archive-post-link">
-            动态规划
-          </a>
-        </span>
-      </div>
-    
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-02-12
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/12/tree/" class="archive-post-link">
-            二叉搜索树，中序遍历，二分
-          </a>
-        </span>
-      </div>
-    
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-02-11
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/11/graph/" class="archive-post-link">
-            图，并查集，拓扑
-          </a>
-        </span>
-      </div>
-    
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-02-10
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/10/twopointer/" class="archive-post-link">
-            双指针，窗口类，对撞类，并行类
-          </a>
-        </span>
-      </div>
-    
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-02-10
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/10/lc100-200/" class="archive-post-link">
-            LeetCode 100 - 200
-          </a>
-        </span>
-      </div>
-    
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2018-02-10
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/10/Sort/" class="archive-post-link">
-            排序
-          </a>
-        </span>
-      </div>
-    
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-03-13
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/03/13/array/" class="archive-post-link">
-            array
-          </a>
-        </span>
-      </div>
-    
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            2017-03-13
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2017/03/13/iterator/" class="archive-post-link">
-            Iterator
-          </a>
-        </span>
-      </div>
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
-      <a class="prev" href="/">
+      <a class="prev" href="/2018/03/12/String/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text">Prev</span>
+        <span class="prev-text nav-default">String</span>
+        <span class="prev-text nav-mobile">Prev</span>
       </a>
     
     
+      <a class="next" href="/2018/03/10/segmenttree/">
+        <span class="next-text nav-default">区间树</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
   </nav>
 
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -506,6 +382,11 @@
     </div>
 
     
+  
+  
+
+  
+
 
 
     
