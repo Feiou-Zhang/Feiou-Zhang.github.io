@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="学习Python"/>
+
+
+
+
+  <meta name="keywords" content="Python, Feiou Zhang" />
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Feiou Zhang">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/03/09/python/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> 学习Python - Feiou Zhang </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Feiou Zhang</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            Categories
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Feiou Zhang</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              Categories
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          学习Python
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-03-09
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/Learn/">Learn</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#day-one"><span class="toc-text">day one</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#python-里并不支持-i-或者-i-这种操作"><span class="toc-text">python 里并不支持 ++i 或者 i++ 这种操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#for-循环"><span class="toc-text">for 循环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#return"><span class="toc-text">return</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#swap"><span class="toc-text">swap</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#xrange"><span class="toc-text">xrange</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#day-two"><span class="toc-text">day two</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#排序"><span class="toc-text">排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#回溯"><span class="toc-text">回溯</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#全局变量"><span class="toc-text">全局变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#init"><span class="toc-text">init</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#while-list"><span class="toc-text">while list</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#list-slices-不知道这个怎么翻译-切片吗"><span class="toc-text">list slices 不知道这个怎么翻译 切片吗</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#stack"><span class="toc-text">stack</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p><a href="https://segmentfault.com/a/1190000000618286#xrange" target="_blank" rel="noopener">https://segmentfault.com/a/1190000000618286#xrange</a></p>
+<h3 id="day-one"><a href="#day-one" class="headerlink" title="day one"></a>day one</h3><h5 id="python-里并不支持-i-或者-i-这种操作"><a href="#python-里并不支持-i-或者-i-这种操作" class="headerlink" title="python 里并不支持 ++i 或者 i++ 这种操作"></a>python 里并不支持 ++i 或者 i++ 这种操作</h5><p>想increment的话，只能 i += 1 这样</p>
+<h5 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h5><p>python 里好像并不支持在for里面加很多条件，<br>比如java可以 for (int i = 0; i &lt; k &amp;&amp; head != null; ++i) 这样<br>但python可以 在foreach的同时 加一个index</p>
+<p>比如 for i, num in enumerate(nums):<br>省去了一些麻烦不用总写中括号</p>
+<h5 id="return"><a href="#return" class="headerlink" title="return"></a>return</h5><p>python 并没有像java一样，在程序末尾强制要return</p>
+<h5 id="swap"><a href="#swap" class="headerlink" title="swap"></a>swap</h5><p>python的swap真是简洁，，如果想swap list（数组）中的2个元素，只要<br>nums[a], nums[b] = nums[b], nums[a] </p>
+<h5 id="xrange"><a href="#xrange" class="headerlink" title="xrange"></a>xrange</h5><p>新手python竟然还遇到了不同版本的问题<br>python3之后取消了xrange 这个函数，只保留了range<br>应该是range内部机制和xrange 一样了</p>
+<h3 id="day-two"><a href="#day-two" class="headerlink" title="day two"></a>day two</h3><h5 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h5><p>简单看，好像排序有2种</p>
+<ol>
+<li>sort() 是list专属的，是inplace 排序，return None</li>
+<li>sorted() 可以排序任何类型，字典，tuple，list都可以，而且不会更改原数组，是返回一个</li>
+</ol>
+<h5 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h5><p>新手python 做了个leetcode 中等题 debug了一小时可能</p>
+<ol>
+<li>python中 string 数字 竟然不能直接当数字用？我咋记得 python 没啥type呢， 需要用int（“1”）转一下</li>
+<li>另外，递归的时候，需要在函数前面加个 self.dfs（）这样</li>
+<li>string 同样是 immutable的，</li>
+</ol>
+<h5 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h5><p>普通全局变量 比如 str int 这种，如果再local 要用的话，必须在local 声明下<br>例如 <code>global num</code> 这样</p>
+<h5 id="init"><a href="#init" class="headerlink" title="init"></a><strong>init</strong></h5><p>这个好像有点类似java里的构造函数，里面可以放些 类似全局变量<br>之后用self. 就可以直接用</p>
+<h5 id="while-list"><a href="#while-list" class="headerlink" title="while list"></a>while list</h5><p>这个很有意思，while list 就是当list 不为空的时候就一直是True</p>
+<h5 id="list-slices-不知道这个怎么翻译-切片吗"><a href="#list-slices-不知道这个怎么翻译-切片吗" class="headerlink" title="list slices 不知道这个怎么翻译 切片吗"></a>list slices 不知道这个怎么翻译 切片吗</h5><p>这里面有很多 很简洁的方法, 比如:<br><code>list[-1]</code> 这样就是 get list 最后一个元素</p>
+<p><code>list[::-1]</code> 就是倒序一个list</p>
+<p><code>list[3:6]</code> 这个就是 截取list里面从第index 3 到 5 的元素</p>
+<p><code>list[3:]</code> 和 <code>list[:6]</code> 如果像这样只有一边有的话，那么就默认另一边是到头</p>
+<p><code>list[:-1]</code> 这样就是截取从第0 到 倒数第2个元素之间</p>
+<h5 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h5><p>python 好像并没有stack 这么个东西，但list完全可以当stack用</p>
+<p>peek 就是 list[-1]<br>pop 是有的<br>append 就是 push</p>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Python/">Python</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/03/09/interview/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">面试技巧</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/02/23/restful/">
+        <span class="next-text nav-default">Rest</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:feiou.zhang@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.linkedin.com/in/feiouzhang/" class="iconfont icon-linkedin" title="linkedin"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Feiou-Zhang" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2017 - 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Feiou Zhang</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>
