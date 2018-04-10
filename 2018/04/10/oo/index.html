@@ -17,8 +17,12 @@
 
 
 
+  <meta name="description" content="面向对象"/>
 
 
+
+
+  <meta name="keywords" content="OO, Feiou Zhang" />
 
 
 
@@ -38,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/archives/page/2/"/>
+<link rel="canonical" href="http://yoursite.com/2018/04/10/oo/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -77,11 +81,7 @@
 
 
 
-    <title>
-  
-    Archives - Feiou Zhang
-  
-</title>
+    <title> 面向对象 - Feiou Zhang </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -193,312 +193,131 @@
           <div id="content" class="content">
             
   
-  <section id="archive" class="archive">
-    
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          面向对象
+        
+      </h1>
 
-    
-      
+      <div class="post-meta">
+        <span class="post-time">
+          2018-04-10
+        </span>
         
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year">2018</h2>
+          <div class="post-category">
+            
+              <a href="/categories/基础/">基础</a>
+            
           </div>
         
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            03-04
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/03/04/backtrackingtips/" class="archive-post-link">
-            回溯解题小技巧
-          </a>
-        </span>
+        
       </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-Object-Oriented"><span class="toc-text">Java - Object Oriented</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Abstraction"><span class="toc-text">Abstraction</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Encapsulation"><span class="toc-text">Encapsulation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Polymorphism"><span class="toc-text">Polymorphism</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#inheritance-and-composition"><span class="toc-text">inheritance and composition</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <h3 id="Java-Object-Oriented"><a href="#Java-Object-Oriented" class="headerlink" title="Java - Object Oriented"></a>Java - Object Oriented</h3><h4 id="Abstraction"><a href="#Abstraction" class="headerlink" title="Abstraction"></a>Abstraction</h4><ol>
+<li>抽象的特性<ol>
+<li>一个类，哪怕只有一个抽象方法，那么这个类也必须是个抽象类， 但一个抽象类，是可以不包含任何抽象方法的</li>
+<li>当一个非抽象类 继承一个抽象类的时候，子类必须重写这个抽象类的所有抽象方法，抽象类继承抽象类则不用</li>
+<li>abstract 和 final不能同时形容一个类，因为abstract必须要被继承才能用，而final是不让别人继承</li>
+<li>abstract 也不能喝 private, static, final 来同时形容一个方法</li>
+</ol>
+</li>
+<li>为什么需要抽象<ol>
+<li>抽象类像是一个蓝图，它规定了一些必须有的方法，并且强制继承它的子类要重写这些方法</li>
+<li>也像一个目录</li>
+</ol>
+</li>
+</ol>
+<h4 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h4><ol>
+<li>封装 允许你封装一些你不希望这个程序的其他部分触碰的东西</li>
+<li>封装 隐藏了一些不必要，过于复杂的 细节</li>
+<li>解耦设计，只暴露必要的方法，接口，有利于程序之后的修改</li>
+</ol>
+<p>关于setter 和 getter</p>
+<pre><code>1. 他们不一定非要成对出现，反而，setter只需要在必要的时候才用
+2. setter 可以用来 验证 和 限制 一些 赋值
+</code></pre><h4 id="Polymorphism"><a href="#Polymorphism" class="headerlink" title="Polymorphism"></a>Polymorphism</h4><ol>
+<li>static(complie time)<br>method overloading: 允许你有相同的方法名，接受不同的参数，不同可以是 数量的，顺序的，类型的<br>但返回类型 是不在这个不同的范围内的</li>
+<li>dynamic(run time)<br>method overriding: 允许你有相同的方法名以及相同的参数，用来覆盖父类的方法</li>
+</ol>
+<h4 id="inheritance-and-composition"><a href="#inheritance-and-composition" class="headerlink" title="inheritance and composition"></a>inheritance and composition</h4><p>当两个类 有 IS-A 的关系的时候，可以使用继承，否则应当使用 composition<br>因为继承是一种强耦合，超类的修改会影响所有子类，而且一个子类只能继承一个父类<br>但一个子类可以有多个接口</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
+<li>An object is an instance of a class.</li>
+<li>Encapsulation provides the security that keeps data and methods safe from inadvertent changes.</li>
+<li>Inheritance is a parent-child relationship of a class which is mainly used for code reusability.</li>
+<li>Polymorphism definition is that Poly means many and morphos means forms.</li>
+<li>Using abstraction one can simulate real world objects.</li>
+<li>Abstraction provides advantage of code reuse</li>
+<li>Abstraction enables program open for extension</li>
+</ol>
+
+      
+    </div>
+
     
       
-        
-        
-
-        
       
 
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            03-02
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/03/02/trie/" class="archive-post-link">
-            字典树
-          </a>
-        </span>
-      </div>
+
+
+      
+      
     
-      
-        
-        
 
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            02-26
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/26/random/" class="archive-post-link">
-            随机
-          </a>
-        </span>
-      </div>
     
-      
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/OO/">OO</a>
+            
+          </div>
         
         
-
         
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            02-23
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/23/restful/" class="archive-post-link">
-            Rest
-          </a>
-        </span>
-      </div>
+  <nav class="post-nav">
     
-      
-        
-        
-
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            02-22
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/22/kth/" class="archive-post-link">
-            第k系列
-          </a>
-        </span>
-      </div>
-    
-      
-        
-        
-
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            02-22
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/22/others/" class="archive-post-link">
-            杂题
-          </a>
-        </span>
-      </div>
-    
-      
-        
-        
-
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            02-21
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/21/backtracking/" class="archive-post-link">
-            回溯
-          </a>
-        </span>
-      </div>
-    
-      
-        
-        
-
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            02-16
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/16/decode/" class="archive-post-link">
-            Encode, Decode
-          </a>
-        </span>
-      </div>
-    
-      
-        
-        
-
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            02-14
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/14/postorder/" class="archive-post-link">
-            先序，后序，层序遍历的应用
-          </a>
-        </span>
-      </div>
-    
-      
-        
-        
-
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            02-13
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/13/dp/" class="archive-post-link">
-            动态规划
-          </a>
-        </span>
-      </div>
-    
-      
-        
-        
-
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            02-12
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/12/tree/" class="archive-post-link">
-            二叉搜索树，中序遍历，二分
-          </a>
-        </span>
-      </div>
-    
-      
-        
-        
-
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            02-11
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/11/graph/" class="archive-post-link">
-            图，并查集，拓扑
-          </a>
-        </span>
-      </div>
-    
-      
-        
-        
-
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            02-10
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/10/twopointer/" class="archive-post-link">
-            双指针，窗口类，对撞类，并行类
-          </a>
-        </span>
-      </div>
-    
-      
-        
-        
-
-        
-      
-
-      <div class="archive-post">
-        <span class="archive-post-time">
-          
-            02-10
-          
-        </span>
-        <span class="archive-post-title">
-          <a href="/2018/02/10/Sort/" class="archive-post-link">
-            排序
-          </a>
-        </span>
-      </div>
-    
-  </section>
-
-  
-  <nav class="pagination">
-    
-      <a class="prev" href="/archives/">
+      <a class="prev" href="/2018/04/10/datastructer/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text">Prev</span>
+        <span class="prev-text nav-default">数据结构</span>
+        <span class="prev-text nav-mobile">Prev</span>
       </a>
     
     
+      <a class="next" href="/2018/04/10/jichu/">
+        <span class="next-text nav-default"></span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
   </nav>
 
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -583,6 +402,11 @@
     </div>
 
     
+  
+  
+
+  
+
 
 
     
