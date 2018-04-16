@@ -248,7 +248,7 @@
 </li>
 <li><p>Factor Combinations<br>这个因子的选取因为也是不回头的规则，需要还是需要传入index，来标记当前用到哪个因子了<br>而且，要用for循环来不断加入当前因子，所以，递归的时候，并不需要 +1<br>这题，去重是最重要的部分。详细还是复习代码吧</p>
 </li>
-<li><p>Generalized Abbreviation<br>首先缩写肯定是要从第一位开始的，如果从后面开始，就miss了一些字符，肯定就错了，所以不用for循环<br>其次，也肯定是要做的当前走到哪个index了，所以，递归也传入index，并且index要加一<br>这题的重点是，abbreviate的时候如何回溯，因为毕竟当时没有加入任何东西到stringbuilder里面<br>所以，这个题要在加入结果后，也回溯，这样就可以把最后没走到情况二的分支也回溯</p>
+<li><p>Generalized Abbreviation<br>首先缩写肯定是要从第一位开始的，如果从后面开始，就miss了一些字符，肯定就错了，所以不用for循环<br>其次，也肯定是要记得当前走到哪个index了，所以，递归要传入index，并且index要加一<br>这题的重点是，abbreviate的时候如何回溯，因为毕竟当时没有加入任何东西到stringbuilder里面<br>所以，这个题要在加入结果后，也回溯，这样就可以把最后没走到情况二的分支也回溯</p>
 </li>
 </ol>
 <h4 id="递归不需要传index"><a href="#递归不需要传index" class="headerlink" title="递归不需要传index"></a>递归不需要传index</h4><ol>
@@ -260,7 +260,9 @@
 </li>
 <li><p>Palindrome Permutation II</p>
 <p>这个题，其实有点特殊，因为index有很多，for循环是循环遍历map里面符合条件的字符，这个不用传index，<br>因为map回溯之后，是可以回头选择之前的字符的，而且，当前字符也可能有多个，需要重复选择<br>但对于解，是有left 和 right 2个 <code>index</code>的，每层只把字符添加到当前的left 和 right index上。<br>而下层就要从left-1 和right+1 开始继续。直到left或right 出界为止    </p>
-<h4 id="退出时扔需要回溯"><a href="#退出时扔需要回溯" class="headerlink" title="退出时扔需要回溯"></a>退出时扔需要回溯</h4></li>
+</li>
+</ol>
+<h4 id="退出时扔需要回溯"><a href="#退出时扔需要回溯" class="headerlink" title="退出时扔需要回溯"></a>退出时扔需要回溯</h4><ol>
 <li>Generalized Abbreviation</li>
 </ol>
 <h4 id="无退出条件"><a href="#无退出条件" class="headerlink" title="无退出条件"></a>无退出条件</h4><ol>
